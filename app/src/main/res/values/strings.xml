@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">SocialScape</string>
+
+    <string name="home">Home</string>
+    <string name="messages">Messages</string>
+    <string name="search">Search</string>
+    <string name="profile">Profile</string>
+    <string name="on_board_skip">Skip\n</string>
+    <string name="on_board_Next">Next\n</string>
+    <string name="welcome_to_the_fun_nmedia_x">Welcome To the Fun \nMedia X</string>
+    <string name="best_social_app_to_nmake_new_friends">Best Social App to \nMake New Friends</string>
+    <string name="enjoy_your_life_every_time_every_where">Enjoy Your Life Every Time, Every Where</string>
+    <string name="back">Back</string>
+    <string name="create_account">Create Account</string>
+    <string name="email">Email</string>
+    <string name="password">Password\n</string>
+    <string name="username">Enter your full name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account_to_keep_exploring_amazing_destinations_around_the_world">Create Account to keep exploring amazing destinations around the world!</string>
+    <string name="welcome">Welcome</string>
+    <string name="by_creating_an_account_you_agree_to_our">By creating an account, you agree to our</string>
+    <string name="terms_conditions"><![CDATA[Terms & Conditions ]]></string>
+    <string name="and_agree_to">and agree to </string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="sign_in">Sign in</string>
+
+</resources>
