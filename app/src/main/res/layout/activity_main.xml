@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green"
     tools:context=".MainActivity">
 
     <fragment
@@ -26,7 +27,6 @@
         app:itemIconSize="25dp"
         app:itemPaddingBottom="@dimen/_8sdp"
         app:itemRippleColor="@null"
-        android:visibility="gone"
         app:itemIconTint="@color/white"
         app:itemActiveIndicatorStyle="@style/CustomActiveIndicatorStyle"
         app:itemTextColor="@color/white"
