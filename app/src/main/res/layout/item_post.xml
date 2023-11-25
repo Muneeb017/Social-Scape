@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_3sdp"
                     android:text="@string/like"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
@@ -145,7 +145,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_3sdp"
                     android:text="@string/comment"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
@@ -172,7 +172,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_3sdp"
                     android:text="@string/share"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="@dimen/_14sdp" />
 
             </LinearLayout>
 
@@ -184,7 +184,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_8sdp"
             android:text="@string/liked_by_you_and_500_others"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_14sdp"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 

@@ -3,7 +3,7 @@
 
     <string name="home">Home</string>
     <string name="messages">Messages</string>
-    <string name="search">Search</string>
+    <string name="search">Search "Your Friend"</string>
     <string name="profile">Profile</string>
     <string name="on_board_skip">Skip\n</string>
     <string name="on_board_Next">Next\n</string>
@@ -43,5 +43,19 @@
     <string name="liked_by_you_and_500_others">Liked by you and 500 others</string>
     <string name="hello_my_friends_today_i_did_holl_for_the_first_time_it_was_a_crazy_experience">Hello my friends today i did holl for the first time it was a crazy experience.</string>
     <string name="travel">#travel</string>
+    <string name="discover">Discover</string>
+    <string name="accounts">Accounts</string>
+    <string name="tags">Tags\n</string>
+    <string name="clear_all">Clear All</string>
+    <string name="recent">Recent</string>
+    <string name="ui_designer">UI Designer</string>
+    <string name="shrutti">____.shrutti___</string>
+    <string name="_1_0m_posts">1.0M Posts</string>
+    <string name="hello">#hello</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="activity">Activity</string>
+    <string name="just_now">Just Now</string>
+    <string name="amy_jasus">amy_jasus</string>
 
 </resources>

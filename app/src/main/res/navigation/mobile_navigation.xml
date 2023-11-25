@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/friendsFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -38,5 +38,60 @@
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/createNewAccountFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.auth.register.CreateNewAccountFragment"
+        android:label="fragment_create_new_account"
+        tools:layout="@layout/fragment_create_new_account" />
+
+    <fragment
+        android:id="@+id/createNewPasswordFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.auth.reset.CreateNewPasswordFragment"
+        android:label="fragment_create_new_password"
+        tools:layout="@layout/fragment_create_new_password" />
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.auth.reset.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/likesFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.likes_friend.LikesFragment"
+        android:label="fragment_likes"
+        tools:layout="@layout/fragment_likes" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.auth.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.onboarding.OnboardingFragment"
+        android:label="fragment_onboarding"
+        tools:layout="@layout/fragment_onboarding" />
+    <fragment
+        android:id="@+id/onboardingFirstPageFrag"
+        android:name="com.muneeb.socialscape.ui.fragments.onboarding.OnboardingFirstPageFrag"
+        android:label="fragment_onboarding_first_page"
+        tools:layout="@layout/fragment_onboarding_first_page" />
+    <fragment
+        android:id="@+id/onboardingSecondPageFrag"
+        android:name="com.muneeb.socialscape.ui.fragments.onboarding.OnboardingSecondPageFrag"
+        android:label="fragment_onboarding_second_page"
+        tools:layout="@layout/fragment_onboarding_second_page" />
+    <fragment
+        android:id="@+id/onboardingThirdPageFrag"
+        android:name="com.muneeb.socialscape.ui.fragments.onboarding.OnboardingThirdPageFrag"
+        android:label="fragment_onboarding_third_page"
+        tools:layout="@layout/fragment_onboarding_third_page" />
+    <fragment android:id="@+id/placeholder" />
+    <fragment
+        android:id="@+id/friendsFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.likes_friend.FriendsFragment"
+        android:label="fragment_friends"
+        tools:layout="@layout/fragment_friends" />
 
 </navigation>
