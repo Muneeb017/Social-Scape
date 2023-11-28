@@ -10,16 +10,16 @@
         android:id="@+id/constraintLayout4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ivPerson"
-            android:layout_width="@dimen/_48sdp"
-            android:layout_height="@dimen/_48sdp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:scaleType="centerCrop"
             android:src="@drawable/image"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,11 +30,11 @@
             android:id="@+id/tvUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_3sdp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="3dp"
             android:text="prexak5876"
             android:textColor="@color/black"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/ivPerson"
             app:layout_constraintTop_toTopOf="@+id/ivPerson" />
 
@@ -42,27 +42,27 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginHorizontal="15dp"
             android:text="@string/artist"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/ivPerson"
             app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvClose"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             app:cardBackgroundColor="@color/red"
-            app:cardCornerRadius="@dimen/_25sdp"
+            app:cardCornerRadius="25dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="@dimen/_23sdp"
-                android:layout_height="@dimen/_23sdp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_close"
                 app:tint="@color/white" />
@@ -71,19 +71,19 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvCheck"
-            android:layout_width="@dimen/_35sdp"
-            android:layout_height="@dimen/_35sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="5dp"
             app:cardBackgroundColor="@color/green"
-            app:cardCornerRadius="@dimen/_25sdp"
+            app:cardCornerRadius="25dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/cvClose"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="@dimen/_23sdp"
-                android:layout_height="@dimen/_23sdp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_check"
                 app:tint="@color/white" />
@@ -96,7 +96,7 @@
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginTop="10dp"
         android:background="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

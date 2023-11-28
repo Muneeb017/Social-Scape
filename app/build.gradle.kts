@@ -1,7 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id ("androidx.navigation.safeargs.kotlin")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -58,6 +58,17 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
 
     //Sizing
-    implementation("com.intuit.sdp:sdp-android:1.1.0")
+//    implementation("com.intuit.sdp:sdp-android:1.1.0")
+
+
+    implementation ("me.grantland:autofittextview:0.2.1")
+
+    implementation ("com.github.luongvo:iOS-SwitchView:1.0.2")
+
+    implementation ("com.github.iielse:switchbutton:1.0.4")
+
+    implementation ("com.github.zcweng:switch-button:0.0.3@aar")
+
+    implementation ("com.github.addisonelliott:SegmentedButton:3.1.9")
 
 }

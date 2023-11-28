@@ -2,13 +2,13 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="@dimen/_150sdp"
-    android:layout_height="@dimen/_200sdp"
-    android:layout_marginHorizontal="@dimen/_15sdp"
-    android:layout_marginTop="@dimen/_15sdp"
+    android:layout_width="150dp"
+    android:layout_height="200dp"
+    android:layout_marginHorizontal="15dp"
+    android:layout_marginTop="15dp"
     android:background="@color/white"
-    android:padding="@dimen/_5sdp"
-    app:cardCornerRadius="@dimen/_15sdp">
+    android:padding="5dp"
+    app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -22,11 +22,11 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btnPlay"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:visibility="gone"
             app:cardBackgroundColor="#80000000"
-            app:cardCornerRadius="@dimen/_25sdp"
+            app:cardCornerRadius="25dp"
             app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -34,8 +34,8 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:layout_width="@dimen/_15sdp"
-                android:layout_height="@dimen/_15sdp"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_play" />
 
@@ -43,10 +43,10 @@
 
         <ImageView
             android:id="@+id/ivDuplicate"
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_gravity="center"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_margin="10dp"
             android:src="@drawable/ic_duplicate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

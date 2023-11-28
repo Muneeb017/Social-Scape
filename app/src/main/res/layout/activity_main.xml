@@ -22,10 +22,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
         android:layout_width="0dp"
-        android:layout_height="@dimen/_50sdp"
+        android:layout_height="55dp"
         android:background="@color/green"
-        app:itemIconSize="25dp"
-        app:itemPaddingBottom="@dimen/_8sdp"
+        app:itemIconSize="22dp"
+        app:itemPaddingBottom="8dp"
         app:itemRippleColor="@null"
         app:itemIconTint="@color/white"
         app:itemActiveIndicatorStyle="@style/CustomActiveIndicatorStyle"

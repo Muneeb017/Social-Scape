@@ -4,28 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_10sdp"
+    android:layout_margin="10dp"
     android:background="@color/white"
-    app:cardCornerRadius="@dimen/_15sdp"
+    app:cardCornerRadius="15dp"
     app:cardElevation="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="@dimen/_10sdp">
+        android:padding="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout3"
-            android:layout_width="@dimen/_55sdp"
-            android:layout_height="@dimen/_55sdp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:background="@drawable/rectangle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivPerson"
-                android:layout_width="@dimen/_48sdp"
-                android:layout_height="@dimen/_48sdp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -39,11 +39,11 @@
             android:id="@+id/tvUserName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_15sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
             android:text="@string/jana_strassmann"
             android:textColor="@color/black"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout3" />
 
@@ -51,17 +51,17 @@
             android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginHorizontal="15dp"
             android:text="@string/artist"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="15sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
             app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="@dimen/_25sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/ic_more"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintEnd_toEndOf="parent"
@@ -70,9 +70,9 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView2"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_300sdp"
-            android:layout_marginTop="@dimen/_15sdp"
-            app:cardCornerRadius="@dimen/_15sdp"
+            android:layout_height="300dp"
+            android:layout_marginTop="15dp"
+            app:cardCornerRadius="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
@@ -90,7 +90,7 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="@+id/cardView2"
             app:layout_constraintStart_toStartOf="@+id/cardView2"
@@ -108,17 +108,17 @@
 
                 <ImageView
                     android:id="@+id/ivLike"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_favorite_empty" />
 
                 <TextView
                     android:id="@+id/tvLike"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginStart="3dp"
                     android:text="@string/like"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -135,17 +135,17 @@
 
                 <ImageView
                     android:id="@+id/ivComment"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_comment" />
 
                 <TextView
                     android:id="@+id/tvComment"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginStart="3dp"
                     android:text="@string/comment"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -162,17 +162,17 @@
 
                 <ImageView
                     android:id="@+id/ivShare"
-                    android:layout_width="@dimen/_25sdp"
-                    android:layout_height="@dimen/_25sdp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/ic_share" />
 
                 <TextView
                     android:id="@+id/tvShare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_3sdp"
+                    android:layout_marginStart="3dp"
                     android:text="@string/share"
-                    android:textSize="@dimen/_14sdp" />
+                    android:textSize="14sp" />
 
             </LinearLayout>
 
@@ -182,9 +182,9 @@
             android:id="@+id/tvLikesCount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:text="@string/liked_by_you_and_500_others"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
@@ -192,10 +192,10 @@
             android:id="@+id/tvTag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:text="@string/travel"
             android:textColor="@color/green"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/tvLikesCount" />
 
@@ -203,9 +203,9 @@
             android:id="@+id/textView11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginTop="8dp"
             android:text="@string/hello_my_friends_today_i_did_holl_for_the_first_time_it_was_a_crazy_experience"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="14sp"
             app:layout_constraintStart_toStartOf="@+id/linearLayout3"
             app:layout_constraintTop_toBottomOf="@+id/tvTag" />
 

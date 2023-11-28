@@ -5,25 +5,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_circle_bottom"
-    android:paddingBottom="@dimen/_15sdp"
+    android:paddingBottom="15dp"
     tools:context=".ui.fragments.search.SearchFragment">
 
     <EditText
         android:id="@+id/edtSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_15sdp"
+        android:layout_margin="15dp"
         android:autofillHints="false"
         android:background="@drawable/bg_edit"
         android:drawableStart="@drawable/search_small"
         android:drawableEnd="@drawable/ic_voice"
-        android:drawablePadding="@dimen/_10sdp"
+        android:drawablePadding="10dp"
         android:drawableTint="@color/black"
         android:hint="@string/search"
         android:inputType="text"
         android:maxLines="1"
-        android:padding="@dimen/_8sdp"
-        android:paddingEnd="@dimen/_10sdp"
+        android:padding="8dp"
+        android:paddingEnd="10dp"
         android:textColor="@color/gray"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,9 +34,9 @@
         android:id="@+id/btnDiscover"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25sdp"
+        android:layout_marginTop="25dp"
         app:cardBackgroundColor="@color/green"
-        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardCornerRadius="15dp"
         app:layout_constraintStart_toStartOf="@+id/edtSearch"
         app:layout_constraintTop_toBottomOf="@+id/edtSearch">
 
@@ -45,11 +45,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="@dimen/_13sdp"
-            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="13dp"
+            android:paddingVertical="5dp"
             android:text="@string/discover"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="15dp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -57,9 +57,9 @@
         android:id="@+id/btnAccounts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_8sdp"
+        android:layout_marginStart="8dp"
         app:cardBackgroundColor="#80D0D0D0"
-        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnDiscover"
         app:layout_constraintStart_toEndOf="@+id/btnDiscover"
@@ -70,21 +70,21 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="@dimen/_13sdp"
-            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="13dp"
+            android:paddingVertical="5dp"
             android:text="@string/accounts"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="15dp" />
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/btnTag"
-        android:layout_width="@dimen/_70sdp"
+        android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginStart="7dp"
         app:cardBackgroundColor="#80D0D0D0"
-        app:cardCornerRadius="@dimen/_15sdp"
+        app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="@+id/btnAccounts"
         app:layout_constraintStart_toEndOf="@+id/btnAccounts"
@@ -95,11 +95,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="@dimen/_13sdp"
-            android:paddingVertical="@dimen/_5sdp"
+            android:paddingHorizontal="13dp"
+            android:paddingVertical="5dp"
             android:text="@string/tags"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_13sdp" />
+            android:textSize="13dp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -119,10 +119,10 @@
         android:id="@+id/constraintLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
-        android:paddingVertical="@dimen/_8sdp"
+        android:paddingVertical="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnDiscover">
@@ -133,7 +133,7 @@
             android:layout_height="wrap_content"
             android:text="@string/recent"
             android:textColor="@color/black"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="16dp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +145,7 @@
             android:layout_height="wrap_content"
             android:text="@string/clear_all"
             android:textColor="@color/green"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

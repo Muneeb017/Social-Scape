@@ -52,10 +52,11 @@
     <string name="shrutti">____.shrutti___</string>
     <string name="_1_0m_posts">1.0M Posts</string>
     <string name="hello">#hello</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="activity">Activity</string>
     <string name="just_now">Just Now</string>
     <string name="amy_jasus">amy_jasus</string>
+    <string name="friend_requests">Friend Requests</string>
+    <string name="post">Post</string>
+    <string name="btn_public">Public</string>
 
 </resources>

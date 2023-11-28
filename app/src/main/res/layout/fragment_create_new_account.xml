@@ -9,9 +9,9 @@
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="@dimen/_20sdp"
-        android:layout_height="@dimen/_25sdp"
-        android:layout_margin="@dimen/_15sdp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="15dp"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:text="@string/back"
         android:textColor="@color/white"
-        android:textSize="@dimen/_12sdp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintStart_toEndOf="@+id/ivBack"
         app:layout_constraintTop_toTopOf="@+id/ivBack" />
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:text="@string/create_account"
         android:textColor="@color/white"
-        android:textSize="@dimen/_16sdp"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +44,9 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/bg_circle_top"
-        android:padding="@dimen/_15sdp"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/welcome"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -66,10 +66,10 @@
             android:id="@+id/tvCreateAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="10dp"
             android:text="@string/create_account_to_keep_exploring_amazing_destinations_around_the_world"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvWelcome"
@@ -80,15 +80,15 @@
             style="@style/subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bg_edit"
             android:drawableStart="@drawable/profile"
-            android:drawablePadding="@dimen/_10sdp"
+            android:drawablePadding="10dp"
             android:hint="@string/username"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:maxLines="1"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvCreateAccount" />
@@ -98,15 +98,15 @@
             style="@style/subtitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bg_edit"
             android:drawableStart="@drawable/ic_email"
-            android:drawablePadding="@dimen/_10sdp"
+            android:drawablePadding="10dp"
             android:hint="@string/email"
-            android:inputType="textEmailAddress"
             android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
-            android:padding="@dimen/_10sdp"
+            android:padding="10dp"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +116,7 @@
             android:id="@+id/llPass"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
             app:hintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -130,12 +130,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit"
                 android:drawableStart="@drawable/ic_lock_small"
-                android:drawablePadding="@dimen/_10sdp"
+                android:drawablePadding="10dp"
                 android:hint="@string/password"
                 android:imeOptions="actionNext"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="@dimen/_10sdp"
+                android:padding="10dp"
                 android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -144,7 +144,7 @@
             android:id="@+id/llPassConfirm"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
             app:hintEnabled="false"
             app:layout_constraintTop_toBottomOf="@+id/llPass"
             app:passwordToggleEnabled="true">
@@ -156,12 +156,12 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit"
                 android:drawableStart="@drawable/ic_lock_small"
-                android:drawablePadding="@dimen/_10sdp"
+                android:drawablePadding="10dp"
                 android:hint="@string/confirm_password"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:maxLines="1"
-                android:padding="@dimen/_10sdp"
+                android:padding="10dp"
                 android:textSize="12sp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -170,15 +170,15 @@
             android:id="@+id/btnCreateAccount"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/bg_circle"
             android:drawableEnd="@drawable/ic_next"
             android:gravity="start"
-            android:paddingStart="@dimen/_15sdp"
+            android:paddingStart="15dp"
             android:text="@string/create_account"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
+            android:textSize="15sp"
             app:backgroundTint="@color/green"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -188,7 +188,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:orientation="horizontal"
             app:layout_constraintEnd_toEndOf="parent"
@@ -200,14 +200,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/already_have_an_account"
                 android:textColor="@color/black"
-                android:textSize="@dimen/_14sdp" />
+                android:textSize="14sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sign_in"
                 android:textColor="@color/green"
-                android:textSize="@dimen/_14sdp"
+                android:textSize="14sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -218,7 +218,7 @@
             android:layout_height="wrap_content"
             android:text="@string/by_creating_an_account_you_agree_to_our"
             android:textColor="@color/gray"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="14sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
             app:layout_constraintEnd_toEndOf="parent"
@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/terms_conditions"
                 android:textColor="@color/green"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -249,16 +249,16 @@
                 android:layout_height="wrap_content"
                 android:text="@string/and_agree_to"
                 android:textColor="@color/gray"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
                 android:text="@string/privacy_policy"
                 android:textColor="@color/green"
-                android:layout_marginStart="2dp"
-                android:textSize="@dimen/_13sdp"
+                android:textSize="13sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
