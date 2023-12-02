@@ -12,20 +12,21 @@
         android:id="@+id/edtSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="15dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="25dp"
         android:autofillHints="false"
         android:background="@drawable/bg_edit"
+        android:drawableTint="@color/black"
         android:drawableStart="@drawable/search_small"
         android:drawableEnd="@drawable/ic_voice"
-        android:drawablePadding="10dp"
-        android:drawableTint="@color/black"
+        android:drawablePadding="15dp"
+        android:paddingEnd="15dp"
         android:hint="@string/search"
         android:inputType="text"
         android:maxLines="1"
-        android:padding="8dp"
-        android:paddingEnd="10dp"
+        android:padding="10dp"
         android:textColor="@color/gray"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -45,11 +46,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="13dp"
-            android:paddingVertical="5dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
             android:text="@string/discover"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="16sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -70,11 +71,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="13dp"
-            android:paddingVertical="5dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
             android:text="@string/accounts"
             android:textColor="@color/gray"
-            android:textSize="15dp" />
+            android:textSize="16sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -82,7 +83,7 @@
         android:id="@+id/btnTag"
         android:layout_width="70dp"
         android:layout_height="40dp"
-        android:layout_marginStart="7dp"
+        android:layout_marginStart="8dp"
         app:cardBackgroundColor="#80D0D0D0"
         app:cardCornerRadius="15dp"
         app:cardElevation="0dp"
@@ -95,11 +96,11 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:gravity="center"
-            android:paddingHorizontal="13dp"
-            android:paddingVertical="5dp"
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="6dp"
             android:text="@string/tags"
             android:textColor="@color/gray"
-            android:textSize="13dp" />
+            android:textSize="16sp" />
 
     </androidx.cardview.widget.CardView>
 
@@ -133,7 +134,7 @@
             android:layout_height="wrap_content"
             android:text="@string/recent"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -145,7 +146,7 @@
             android:layout_height="wrap_content"
             android:text="@string/clear_all"
             android:textColor="@color/green"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -156,7 +157,6 @@
         android:id="@+id/rcvUserPAccounts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -167,8 +167,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvTag"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
         android:visibility="gone"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -180,6 +180,7 @@
         android:id="@+id/rcvTagPost"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

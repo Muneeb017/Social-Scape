@@ -5,15 +5,15 @@
     <string name="messages">Messages</string>
     <string name="search">Search "Your Friend"</string>
     <string name="profile">Profile</string>
-    <string name="on_board_skip">Skip\n</string>
-    <string name="on_board_Next">Next\n</string>
+    <string name="on_board_skip">Skip</string>
+    <string name="on_board_Next">Next</string>
     <string name="welcome_to_the_fun_nmedia_x">Welcome To the Fun \nMedia X</string>
     <string name="best_social_app_to_nmake_new_friends">Best Social App to \nMake New Friends</string>
     <string name="enjoy_your_life_every_time_every_where">Enjoy Your Life Every Time, Every Where</string>
     <string name="back">Back</string>
     <string name="create_account">Create Account</string>
     <string name="email">Email</string>
-    <string name="password">Password\n</string>
+    <string name="password">Password</string>
     <string name="username">Enter your full name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="create_account_to_keep_exploring_amazing_destinations_around_the_world">Create Account to keep exploring amazing destinations around the world!</string>
@@ -30,7 +30,7 @@
     <string name="don_t_worry_i_ll_help_you">Don\'t Worry I\'ll Help You</string>
     <string name="send_insructions">Send Insructions</string>
     <string name="create_new_password">Create New Password</string>
-    <string name="enter_password">Enter password\n</string>
+    <string name="enter_password">Enter password</string>
     <string name="reenter_password">Re-enter password</string>
     <string name="your_new_password_must_be_different_from_previous_used_passwords">Your new password must be different from previous used passwords.</string>
     <string name="login">Login</string>
@@ -45,7 +45,7 @@
     <string name="travel">#travel</string>
     <string name="discover">Discover</string>
     <string name="accounts">Accounts</string>
-    <string name="tags">Tags\n</string>
+    <string name="tags">Tags</string>
     <string name="clear_all">Clear All</string>
     <string name="recent">Recent</string>
     <string name="ui_designer">UI Designer</string>
@@ -58,5 +58,7 @@
     <string name="friend_requests">Friend Requests</string>
     <string name="post">Post</string>
     <string name="btn_public">Public</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

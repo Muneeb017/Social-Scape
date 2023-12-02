@@ -34,7 +34,7 @@
             android:layout_marginTop="3dp"
             android:text="prexak5876"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ivPerson"
             app:layout_constraintTop_toTopOf="@+id/ivPerson" />
 
@@ -45,7 +45,7 @@
             android:layout_marginHorizontal="15dp"
             android:text="@string/artist"
             android:textColor="@color/gray"
-            android:textSize="15sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/ivPerson"
             app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 

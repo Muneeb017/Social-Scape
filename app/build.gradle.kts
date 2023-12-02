@@ -57,18 +57,22 @@ dependencies {
     //Splash screen
     implementation("androidx.core:core-splashscreen:1.0.0")
 
+    implementation ("androidx.media3:media3-exoplayer:1.1.1")
+    implementation ("androidx.media3:media3-ui:1.1.1")
+    implementation ("androidx.media3:media3-common:1.1.1")
+    implementation ("com.github.bruferrari:CameraKit-Android:0.10.1")
+
     //Sizing
 //    implementation("com.intuit.sdp:sdp-android:1.1.0")
-
-
-    implementation ("me.grantland:autofittextview:0.2.1")
-
-    implementation ("com.github.luongvo:iOS-SwitchView:1.0.2")
-
-    implementation ("com.github.iielse:switchbutton:1.0.4")
-
-    implementation ("com.github.zcweng:switch-button:0.0.3@aar")
-
-    implementation ("com.github.addisonelliott:SegmentedButton:3.1.9")
+//
+//    implementation ("me.grantland:autofittextview:0.2.1")
+//
+//    implementation ("com.github.luongvo:iOS-SwitchView:1.0.2")
+//
+//    implementation ("com.github.iielse:switchbutton:1.0.4")
+//
+//    implementation ("com.github.zcweng:switch-button:0.0.3@aar")
+//
+//    implementation ("com.github.addisonelliott:SegmentedButton:3.1.9")
 
 }

@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/media_x"
             android:textColor="@color/green"
-            android:textSize="20sp"
+            android:textSize="22sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"

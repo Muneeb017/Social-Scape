@@ -22,6 +22,7 @@
             android:layout_width="55dp"
             android:layout_height="55dp"
             android:background="@drawable/rectangle"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -46,7 +47,7 @@
             android:layout_marginTop="10dp"
             android:text="@string/shrutti"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout3" />
 
@@ -57,14 +58,14 @@
             android:layout_marginHorizontal="15dp"
             android:text="@string/ui_designer"
             android:textColor="@color/gray"
-            android:textSize="15sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
             app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
         <ImageView
             android:id="@+id/ivClose"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:src="@drawable/ic_close"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout3"
             app:layout_constraintEnd_toEndOf="parent"
