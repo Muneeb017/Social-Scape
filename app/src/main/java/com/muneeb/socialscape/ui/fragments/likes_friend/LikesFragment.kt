@@ -7,7 +7,7 @@ import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentLikesBinding
 
-class LikesFragment : Fragment(R.layout.fragment_likes) {
+class LikesFragment : Fragment(R.layout.fragment_activity_likes) {
 
     private val binding by viewBinding(FragmentLikesBinding::bind)
 
