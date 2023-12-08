@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/callsFragment">
+    app:startDestination="@id/settingFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -130,5 +130,17 @@
         android:name="com.muneeb.socialscape.ui.fragments.story.StoryFragment"
         android:label="fragment_story"
         tools:layout="@layout/fragment_story" />
+
+    <fragment
+        android:id="@+id/videoCallFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.call.VideoCallFragment"
+        android:label="fragment_video_call"
+        tools:layout="@layout/fragment_video_call" />
+
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 
 </navigation>

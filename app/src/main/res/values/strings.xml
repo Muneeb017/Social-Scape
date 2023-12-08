@@ -4,6 +4,7 @@
     <string name="home">Home</string>
     <string name="messages">Messages</string>
     <string name="search">Search "Your Friend"</string>
+    <string name="searchs">Search</string>
     <string name="profile">Profile</string>
     <string name="on_board_skip">Skip</string>
     <string name="on_board_Next">Next</string>
@@ -36,7 +37,7 @@
     <string name="login">Login</string>
     <string name="media_x">Media X</string>
     <string name="jana_strassmann">jana strassmann</string>
-    <string name="artist">Artist</string>
+    <string name="artist">@Artist</string>
     <string name="like">Like</string>
     <string name="comment">Comment</string>
     <string name="share">Share</string>
@@ -58,12 +59,32 @@
     <string name="friend_requests">Friend Requests</string>
     <string name="post">Post</string>
     <string name="btn_public">Public</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="reject">Reject</string>
     <string name="confirm">Confirm</string>
     <string name="alexandre_paiva">Alexandre Paiva</string>
     <string name="ringing">Ringing</string>
     <string name="_12_45">12:45</string>
+    <string name="swipe_up_to_send_message">Swipe up to send message</string>
+    <string name="video_call">Video Call</string>
+    <string name="edit">Edit</string>
+    <string name="followers">Followers</string>
+    <string name="_25k">25K</string>
+    <string name="_256">256</string>
+    <string name="following">Following</string>
+    <string name="_100">100</string>
+    <string name="follow">Follow</string>
+    <string name="architech">Architech</string>
+    <string name="emlen_784">_emlen.784</string>
+    <string name="suggest_for_you">Suggest for you</string>
+    <string name="settings">Settings</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="language">Language</string>
+    <string name="friends">Friends</string>
+    <string name="preferences">Preferences</string>
+    <string name="notifications">Notifications</string>
+    <string name="account_privacy"><![CDATA[Account & Privacy]]></string>
+    <string name="theme">Theme</string>
+    <string name="media_x_help">Media X Help</string>
+    <string name="about">About</string>
 
 </resources>

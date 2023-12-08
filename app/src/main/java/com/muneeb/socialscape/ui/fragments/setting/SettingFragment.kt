@@ -1,4 +1,4 @@
-package com.muneeb.socialscape.ui.fragments.call
+package com.muneeb.socialscape.ui.fragments.setting
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,10 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
-import com.muneeb.socialscape.databinding.FragmentCallsBinding
 import com.muneeb.socialscape.databinding.FragmentVideoCallBinding
 
-class VideoCallFragment : Fragment(R.layout.fragment_video_call) {
+class SettingFragment : Fragment(R.layout.fragment_setting) {
 
     private val binding by viewBinding(FragmentVideoCallBinding::bind)
 
@@ -18,4 +17,5 @@ class VideoCallFragment : Fragment(R.layout.fragment_video_call) {
         super.onViewCreated(view, savedInstanceState)
 
     }
+
 }
