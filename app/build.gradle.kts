@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -57,10 +58,13 @@ dependencies {
     //Splash screen
     implementation("androidx.core:core-splashscreen:1.0.0")
 
-    implementation ("androidx.media3:media3-exoplayer:1.1.1")
-    implementation ("androidx.media3:media3-ui:1.1.1")
-    implementation ("androidx.media3:media3-common:1.1.1")
-    implementation ("com.github.bruferrari:CameraKit-Android:0.10.1")
+    //Firebase
+    implementation(platform("com.google.firebase:firebase-bom:31.1.1"))
+    implementation("com.google.firebase:firebase-auth-ktx")
+
+    implementation("androidx.media3:media3-exoplayer:1.1.1")
+    implementation("androidx.media3:media3-ui:1.1.1")
+    implementation("androidx.media3:media3-common:1.1.1")
 
     //Sizing
 //    implementation("com.intuit.sdp:sdp-android:1.1.0")
@@ -71,7 +75,7 @@ dependencies {
 //
 //    implementation ("com.github.iielse:switchbutton:1.0.4")
 //
-//    implementation ("com.github.zcweng:switch-button:0.0.3@aar")
+    implementation("com.github.zcweng:switch-button:0.0.3@aar")
 //
 //    implementation ("com.github.addisonelliott:SegmentedButton:3.1.9")
 

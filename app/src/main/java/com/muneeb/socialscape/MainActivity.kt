@@ -8,6 +8,8 @@ import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.FirebaseAuth
 import com.muneeb.socialscape.databinding.ActivityMainBinding
 import com.muneeb.socialscape.extensions.hide
 import com.muneeb.socialscape.extensions.show

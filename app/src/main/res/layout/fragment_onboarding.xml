@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.fragments.onboarding.OnboardingFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="10dp"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/nextButton"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,28 +26,71 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:text="@string/on_board_skip"
-        android:textSize="16sp"
         android:textAllCaps="false"
         android:textColor="@color/gray"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextButton"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="wrap_content"
         android:layout_margin="20dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_circle"
+        android:drawableEnd="@drawable/ic_next"
         android:gravity="start"
         android:paddingStart="20dp"
-        android:textSize="18sp"
-        android:drawableEnd="@drawable/ic_next"
-        android:background="@drawable/bg_circle"
-        app:backgroundTint="@color/green"
         android:text="@string/on_board_Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
+        android:textSize="18sp"
+        android:visibility="gone"
+        app:backgroundTint="@color/green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/bg_circle"
+            android:drawableEnd="@drawable/ic_next"
+            android:gravity="start"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="@color/green" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSinUp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_circle"
+            android:drawableEnd="@drawable/ic_next"
+            android:gravity="start"
+            android:text="@string/Sign_up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:backgroundTint="@color/green" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

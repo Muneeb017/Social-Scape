@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "153740895458",
+    "project_id": "social-scape-8b74b",
+    "storage_bucket": "social-scape-8b74b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:153740895458:android:19bb0d9fd23440ebcbeabb",
+        "android_client_info": {
+          "package_name": "com.muneeb.socialscape"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpSAp4hGyICMRSuMnov1H-pHr4i0DPRxs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

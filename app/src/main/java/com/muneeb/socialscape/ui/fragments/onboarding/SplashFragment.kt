@@ -19,7 +19,7 @@ class SplashFragment : Fragment(R.layout.fragment_splash) {
 
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_splashFragment_to_onboardingFragment)
         }, 3000)
     }
 

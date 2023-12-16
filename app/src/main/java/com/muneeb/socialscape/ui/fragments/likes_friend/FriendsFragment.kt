@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentFriendsBinding
-import com.muneeb.socialscape.databinding.FragmentLikesBinding
 
 class FriendsFragment : Fragment(R.layout.fragment_friends) {
 

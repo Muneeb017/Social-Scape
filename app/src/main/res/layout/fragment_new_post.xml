@@ -153,7 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
             android:orientation="horizontal"
-            android:padding="5dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/textView8">
@@ -166,18 +166,18 @@
                 android:text="Facebook"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <com.suke.widget.SwitchButton
                 android:id="@+id/btnFacebook"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:layout_weight="2"
-                app:thumbTint="@color/green"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.4"
                 android:checked="true"
                 android:gravity="center"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:sb_checked_color="@color/green"
+                app:sb_checkline_color="@color/bgGray"
+                app:sb_show_indicator="false"
+                app:sb_uncheck_color="@color/gray" />
 
         </LinearLayout>
 
@@ -185,9 +185,10 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal"
-            android:padding="5dp"
+            android:padding="10dp"
             app:layout_constraintEnd_toEndOf="@+id/cardView"
             app:layout_constraintStart_toStartOf="@+id/cardView"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout1">
@@ -200,18 +201,21 @@
                 android:text="Twitter"
                 android:textSize="20sp" />
 
-            <androidx.appcompat.widget.SwitchCompat
+            <com.suke.widget.SwitchButton
                 android:id="@+id/btnTwitter"
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_gravity="right"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1.2"
                 android:checked="true"
                 android:gravity="center"
-                app:thumbTint="@color/green"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                app:sb_checked_color="@color/green"
+                app:sb_checkline_color="@color/bgGray"
+                app:sb_show_indicator="false"
+                app:sb_uncheck_color="@color/gray" />
 
         </LinearLayout>
 

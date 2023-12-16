@@ -8,4 +8,8 @@
     <color name="bgGreen">#3fc28a</color>
     <color name="bgGray">#EAEAEA</color>
     <color name="lightGreen">#C2F62C</color>
+    <color name="lightBlack">#60000000</color>
+    <color name="md_theme_light_background">#F2F2F7</color>
+    <color name="semigray">#DEDDFC</color>
+
 </resources>

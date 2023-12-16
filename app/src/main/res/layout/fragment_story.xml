@@ -95,7 +95,6 @@
         android:drawableStart="@drawable/vacter_two"
         android:drawableEnd="@drawable/ic_send"
         android:drawablePadding="15dp"
-        android:background="null"
         android:hint="Your comment..."
         android:padding="10dp"
         android:textColor="#B38181A4"

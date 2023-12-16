@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/editProfileFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -35,15 +35,19 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash">
         <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
+            android:id="@+id/action_splashFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/createNewAccountFragment"
         android:name="com.muneeb.socialscape.ui.fragments.auth.register.CreateNewAccountFragment"
         android:label="fragment_create_new_account"
-        tools:layout="@layout/fragment_create_new_account" />
+        tools:layout="@layout/fragment_create_new_account" >
+        <action
+            android:id="@+id/action_createNewAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/createNewPasswordFragment"
@@ -67,13 +71,27 @@
         android:id="@+id/loginFragment"
         android:name="com.muneeb.socialscape.ui.fragments.auth.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_createNewAccountFragment"
+            app:destination="@id/createNewAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/onboardingFragment"
         android:name="com.muneeb.socialscape.ui.fragments.onboarding.OnboardingFragment"
         android:label="fragment_onboarding"
-        tools:layout="@layout/fragment_onboarding" />
+        tools:layout="@layout/fragment_onboarding" >
+        <action
+            android:id="@+id/action_onboardingFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_onboardingFragment_to_createNewAccountFragment"
+            app:destination="@id/createNewAccountFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/onboardingFirstPageFrag"
@@ -148,5 +166,11 @@
         android:name="com.muneeb.socialscape.ui.fragments.profile.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
+
+    <fragment
+        android:id="@+id/videoRecordingFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.story.VideoRecordingFragment"
+        android:label="fragment_video_recording"
+        tools:layout="@layout/fragment_video_recording" />
 
 </navigation>
