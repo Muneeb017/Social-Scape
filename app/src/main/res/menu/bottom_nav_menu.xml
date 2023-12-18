@@ -14,7 +14,7 @@
     <item
         android:id="@+id/searchFragment"
         android:icon="@drawable/ic_search"
-        android:title="@string/search" />
+        android:title="@string/searchs" />
 
     <item
         android:id="@+id/profileFragment"

@@ -15,7 +15,7 @@
     <string name="create_account">Create Account</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
-    <string name="username">Enter your full name</string>
+    <string name="username">User Name</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="create_account_to_keep_exploring_amazing_destinations_around_the_world">Create Account to keep exploring amazing destinations around the world!</string>
     <string name="welcome">Welcome</string>
@@ -109,5 +109,8 @@
     <string name="on_board_start">Start</string>
     <string name="sign_up">Sign up</string>
     <string name="enter_your_full_name">Enter Your Full Name</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="other">Other</string>
 
 </resources>

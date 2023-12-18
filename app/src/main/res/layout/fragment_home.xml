@@ -39,7 +39,7 @@
             app:layout_constraintTop_toTopOf="@+id/textView7" />
 
         <ImageView
-            android:id="@+id/ivAdd"
+            android:id="@+id/ivNewPost"
             android:layout_width="18dp"
             android:layout_height="18dp"
             android:layout_marginEnd="15dp"

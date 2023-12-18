@@ -17,16 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/tvBack"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="@string/back"-->
-<!--        android:textColor="@color/green"-->
-<!--        android:textSize="16sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="@+id/ivBack"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/ivBack"-->
-<!--        app:layout_constraintTop_toTopOf="@+id/ivBack" />-->
+    <!--    <TextView-->
+    <!--        android:id="@+id/tvBack"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/back"-->
+    <!--        android:textColor="@color/green"-->
+    <!--        android:textSize="16sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@+id/ivBack"-->
+    <!--        app:layout_constraintStart_toEndOf="@+id/ivBack"-->
+    <!--        app:layout_constraintTop_toTopOf="@+id/ivBack" />-->
 
     <ImageView
         android:id="@+id/btnSetting"
@@ -34,7 +34,6 @@
         android:layout_height="25dp"
         android:layout_marginEnd="25dp"
         android:src="@drawable/ic_setting"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivBack"
@@ -47,6 +46,7 @@
         android:layout_marginEnd="25dp"
         android:src="@drawable/ic_more"
         android:textSize="14sp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivBack"
@@ -75,11 +75,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/tvUserName"
+        android:id="@+id/tvName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="3dp"
         android:text="@string/alexandre_paiva"
         android:textColor="@color/black"
         android:textSize="25sp"
@@ -89,7 +89,7 @@
         app:layout_constraintTop_toTopOf="@+id/constraintLayout3" />
 
     <TextView
-        android:id="@+id/tvSecondName"
+        android:id="@+id/tvUserName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -99,7 +99,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnEdit"
@@ -112,10 +112,9 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:visibility="gone"
         app:backgroundTint="@color/green"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnFollow"
@@ -128,9 +127,10 @@
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="15sp"
+        android:visibility="gone"
         app:backgroundTint="@color/green"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvMessage"
@@ -138,11 +138,12 @@
         android:layout_height="50dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:visibility="gone"
         app:cardBackgroundColor="@color/green"
         app:cardCornerRadius="40dp"
         app:cardElevation="0dp"
         app:layout_constraintStart_toEndOf="@+id/btnFollow"
-        app:layout_constraintTop_toBottomOf="@+id/tvSecondName">
+        app:layout_constraintTop_toBottomOf="@+id/tvUserName">
 
         <ImageView
             android:id="@+id/ivMessage"
@@ -158,12 +159,12 @@
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:orientation="horizontal"
         android:weightSum="3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnFollow">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3">
 
         <LinearLayout
             android:id="@+id/llFollowing"

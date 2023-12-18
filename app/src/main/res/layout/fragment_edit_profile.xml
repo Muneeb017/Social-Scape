@@ -8,7 +8,7 @@
     tools:context=".ui.fragments.profile.EditProfileFragment">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/ivBack"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_margin="25dp"
@@ -29,7 +29,7 @@
         app:srcCompat="@drawable/image" />
 
     <TextView
-        android:id="@+id/saveButton"
+        android:id="@+id/btnSave"
         style="@style/small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,12 +38,12 @@
         android:gravity="center"
         android:paddingHorizontal="20dp"
         android:paddingVertical="10dp"
-        android:textStyle="bold"
         android:text="@string/save"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
     <TextView
         android:id="@+id/tvName"
@@ -51,10 +51,10 @@
         android:layout_width="wrap_content"
         android:gravity="center"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/ivBack"
         tools:text="Floyd Miles" />
 
     <TextView
@@ -160,6 +160,7 @@
             <TextView
                 style="@style/small"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="@string/name"
                 android:textColor="@color/gray" />
@@ -171,30 +172,30 @@
                 android:background="@drawable/bg_edit"
                 android:drawableStart="@drawable/profile"
                 android:drawablePadding="15dp"
+                android:hint="@string/name"
                 android:imeOptions="actionNext"
                 android:maxLines="1"
                 android:padding="15dp"
                 android:textSize="12sp" />
 
             <TextView
-                style="@style/text"
+                style="@style/small"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:text="@string/username"
                 android:textColor="@color/gray" />
 
             <EditText
-                android:id="@+id/edtUsername"
+                android:id="@+id/edtUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/bg_edit"
-                android:digits="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
                 android:drawableStart="@drawable/profile"
                 android:drawablePadding="15dp"
                 android:imeOptions="actionNext"
-                android:inputType="textFilter"
                 android:maxLines="1"
+                android:hint="@string/username"
                 android:padding="15dp"
                 android:textSize="12sp" />
 
@@ -215,12 +216,12 @@
                 android:digits="1234567890"
                 android:drawableStart="@drawable/ic_cake"
                 android:drawablePadding="15dp"
-                android:focusable="false"
+                android:focusable="true"
                 android:imeOptions="actionNext"
                 android:inputType="number"
                 android:maxLines="1"
                 android:padding="15dp"
-                android:textSize="12sp" />
+                android:textSize="12sp"/>
 
             <TextView
                 style="@style/text"
@@ -268,49 +269,20 @@
                 android:background="@drawable/bg_edit"
                 android:drawableStart="@drawable/sms"
                 android:drawablePadding="15dp"
+                android:enabled="false"
                 android:imeOptions="actionNext"
                 android:maxLines="1"
                 android:padding="15dp"
                 android:textSize="12sp" />
 
-            <LinearLayout
-                android:id="@+id/llBrand"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    style="@style/text"
-                    android:layout_marginStart="10dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="center"
-                    android:text="@string/website"
-                    android:textColor="@color/gray" />
-
-                <EditText
-                    android:id="@+id/edtWebsite"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_edit"
-                    android:drawableStart="@drawable/ic_language"
-                    android:drawableTint="#757593"
-                    android:drawablePadding="15dp"
-                    android:imeOptions="actionNext"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:padding="15dp"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnDeleteAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginTop="35dp"
+                app:cardBackgroundColor="@color/red"
                 app:cardCornerRadius="16dp"
-                android:layout_marginBottom="20dp"
-                app:cardBackgroundColor="@color/green"
                 app:cardElevation="0dp"
                 app:contentPadding="10dp"
                 app:layout_constraintBottom_toBottomOf="parent"
