@@ -14,6 +14,8 @@ import android.widget.AutoCompleteTextView
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.muneeb.socialscape.R
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -71,29 +73,29 @@ fun AutoCompleteTextView.setArrayAdapter(list: ArrayList<String>) {
         ArrayAdapter(this.context, R.layout.item_dropdown, list)
     this.setAdapter(adapter)
 }
-//
-//fun ImageView.loadImageFromUrl(
-//    aImageUrl: String? = "",
-//    userImage: Boolean = true
-//) {
-//    val placeholder = if (userImage) R.drawable.user_placeholder else R.drawable.app_icon
-//    if (!aImageUrl.isNullOrEmpty()) {
-//        Glide.with(this.context)
-//            .load(Uri.parse(aImageUrl))
-//            .placeholder(placeholder)
-//            .diskCacheStrategy(DiskCacheStrategy.ALL)
-//            .error(placeholder)
-//            .into(this)
-//    } else displayBlankImage(this.context, placeholder)
-//}
-//
-//fun ImageView.displayBlankImage(aContext: Context, aPlaceHolderImage: Int) {
-//    Glide.with(aContext)
-//        .load(aPlaceHolderImage)
-//        .diskCacheStrategy(DiskCacheStrategy.ALL)
-//        .into(this)
-//}
-//
+
+fun ImageView.loadImageFromUrl(
+    aImageUrl: String? = "",
+    userImage: Boolean = true
+) {
+    val placeholder = if (userImage) R.drawable.image else R.drawable.image
+    if (!aImageUrl.isNullOrEmpty()) {
+        Glide.with(this.context)
+            .load(Uri.parse(aImageUrl))
+            .placeholder(placeholder)
+            .diskCacheStrategy(DiskCacheStrategy.ALL)
+            .error(placeholder)
+            .into(this)
+    } else displayBlankImage(this.context, placeholder)
+}
+
+fun ImageView.displayBlankImage(aContext: Context, aPlaceHolderImage: Int) {
+    Glide.with(aContext)
+        .load(aPlaceHolderImage)
+        .diskCacheStrategy(DiskCacheStrategy.ALL)
+        .into(this)
+}
+
 //fun Fragment.openImagePicker() {
 //    val intent = Intent(Intent.ACTION_PICK)
 //    intent.type = "image/*"

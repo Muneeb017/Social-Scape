@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-parcelize")
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
 }
@@ -66,6 +67,9 @@ dependencies {
     implementation("androidx.media3:media3-exoplayer:1.1.1")
     implementation("androidx.media3:media3-ui:1.1.1")
     implementation("androidx.media3:media3-common:1.1.1")
+
+    //Image processing
+    implementation("com.github.bumptech.glide:glide:4.14.2")
 
     //Sizing
 //    implementation("com.intuit.sdp:sdp-android:1.1.0")

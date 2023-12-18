@@ -23,7 +23,6 @@
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:background="@color/green"
-        android:visibility="gone"
         app:itemActiveIndicatorStyle="@style/CustomActiveIndicatorStyle"
         app:itemIconSize="22dp"
         app:itemIconTint="@color/white"

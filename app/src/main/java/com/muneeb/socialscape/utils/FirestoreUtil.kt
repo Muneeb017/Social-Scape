@@ -1,13 +1,16 @@
 package com.muneeb.socialscape.utils
 
+import android.os.Parcelable
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.muneeb.socialscape.model.User
+import kotlinx.android.parcel.Parcelize
 
 object FirestoreUtil {
 
-    private val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
+     val auth: FirebaseAuth by lazy { FirebaseAuth.getInstance() }
     private val firestore: FirebaseFirestore by lazy { FirebaseFirestore.getInstance() }
 
     // Get the current authenticated user ID
@@ -25,39 +28,43 @@ object FirestoreUtil {
 
     // Function to get user data
     fun getUserData(onSuccess: (User) -> Unit, onFailure: (Exception) -> Unit) {
-        getCurrentUserDocumentRef()?.get()
-            ?.addOnSuccessListener { documentSnapshot ->
-                if (documentSnapshot.exists()) {
-                    val user = documentSnapshot.toObject(User::class.java)
-                    user?.let { onSuccess(it) }
-                } else {
-                    onFailure(Exception("User document does not exist"))
-                }
+        getCurrentUserDocumentRef()?.get()?.addOnSuccessListener { documentSnapshot ->
+            if (documentSnapshot.exists()) {
+                val user = documentSnapshot.toObject(User::class.java)
+                user?.let { onSuccess(it) }
+            } else {
+                onFailure(Exception("User document does not exist"))
             }
-            ?.addOnFailureListener { e ->
-                onFailure(e)
-            }
+        }?.addOnFailureListener { e ->
+            onFailure(e)
+        }
     }
 
     // Function to create or update user data
     fun createOrUpdateUserData(user: User, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
-        getCurrentUserDocumentRef()?.set(user)
-            ?.addOnSuccessListener {
-                onSuccess()
-            }
-            ?.addOnFailureListener { e ->
-                onFailure(e)
-            }
+        getCurrentUserDocumentRef()?.set(user)?.addOnSuccessListener {
+            onSuccess()
+        }?.addOnFailureListener { e ->
+            onFailure(e)
+        }
     }
 
-    data class User(
-        val id: String? = auth.currentUser?.uid,
-        val name: String? = null,
-        val userName: String? = null,
-        val age: String? = null,
-        val gender: String? = null,
-        val email: String? = auth.currentUser?.email,
-        val bio: String? = null,
-        // Add other user properties as needed
-    )
+    fun getAllUsers(onSuccess: (List<User>) -> Unit, onFailure: (Exception) -> Unit) {
+        val usersCollection = firestore.collection("users")
+
+        usersCollection.get().addOnSuccessListener { querySnapshot ->
+            val usersList = mutableListOf<User>()
+
+            for (document in querySnapshot.documents) {
+                val user = document.toObject(User::class.java)
+                user?.let { usersList.add(it) }
+            }
+
+            onSuccess(usersList)
+        }.addOnFailureListener { e ->
+            onFailure(e)
+        }
+    }
+
+
 }

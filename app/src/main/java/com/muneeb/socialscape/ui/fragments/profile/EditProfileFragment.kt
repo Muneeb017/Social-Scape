@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentEditProfileBinding
+import com.muneeb.socialscape.model.User
 import com.muneeb.socialscape.utils.FirestoreUtil
 import com.muneeb.socialscape.utils.setArrayAdapter
 
@@ -25,7 +26,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             add(getString(R.string.other))
         }
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -40,7 +40,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     }
 
     private fun addUserUpdateDataToDB() {
-        FirestoreUtil.createOrUpdateUserData(FirestoreUtil.User(
+        FirestoreUtil.createOrUpdateUserData(
+            User(
             name = binding.edtName.text.toString(),
             userName = binding.edtUserName.text.toString(),
             age = binding.edtAge.text.toString(),

@@ -15,6 +15,7 @@ import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentCreateNewAccountBinding
 import com.muneeb.socialscape.databinding.FragmentHomeBinding
 import com.muneeb.socialscape.extensions.setOnClickWithDebounce
+import com.muneeb.socialscape.model.User
 import com.muneeb.socialscape.utils.FirestoreUtil
 
 class CreateNewAccountFragment : Fragment(R.layout.fragment_create_new_account) {
@@ -71,7 +72,7 @@ class CreateNewAccountFragment : Fragment(R.layout.fragment_create_new_account) 
     }
 
     private fun addUserToDB() {
-        FirestoreUtil.createOrUpdateUserData(FirestoreUtil.User(
+        FirestoreUtil.createOrUpdateUserData(User(
             email = firebaseAuth.currentUser?.email, id = firebaseAuth.currentUser?.uid
         ), onSuccess = {
             findNavController().navigate(R.id.action_createNewAccountFragment_to_loginFragment)
