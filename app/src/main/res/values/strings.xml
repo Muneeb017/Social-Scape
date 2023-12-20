@@ -7,6 +7,8 @@
     <string name="searchs">Search</string>
     <string name="profile">Profile</string>
     <string name="on_board_skip">Skip</string>
+    <string name="btn_private">Private</string>
+    <string name="btn_public">Public</string>
     <string name="on_board_Next">Next</string>
     <string name="welcome_to_the_fun_nmedia_x">Welcome To the Fun \nMedia X</string>
     <string name="best_social_app_to_nmake_new_friends">Best Social App to \nMake New Friends</string>
@@ -62,7 +64,6 @@
     <string name="amy_jasus">amy_jasus</string>
     <string name="friend_requests">Friend Requests</string>
     <string name="post">Post</string>
-    <string name="btn_public">Public</string>
     <string name="reject">Reject</string>
     <string name="confirm">Confirm</string>
     <string name="alexandre_paiva">Alexandre Paiva</string>
@@ -112,7 +113,12 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="other">Other</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_new_post">Create New Post</string>
+    <string name="chineze">chineze</string>
+    <string name="what_s_on_your_mind">What\'s on your mind?</string>
+    <string name="also_post_on">Also post on</string>
+    <string name="twitter">Twitter</string>
+    <string name="facebook">Facebook</string>
+    <string name="upload_image">Upload Image</string>
 
 </resources>

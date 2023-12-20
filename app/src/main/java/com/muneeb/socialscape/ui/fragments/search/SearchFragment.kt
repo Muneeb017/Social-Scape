@@ -2,14 +2,11 @@ package com.muneeb.socialscape.ui.fragments.search
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.adapters.AccountsAdapter
-import com.muneeb.socialscape.databinding.FragmentMessageBinding
 import com.muneeb.socialscape.databinding.FragmentSearchBinding
 import com.muneeb.socialscape.extensions.setVerticalLayout
 import com.muneeb.socialscape.extensions.show
@@ -39,7 +36,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
             }
         }
 
-
         FirestoreUtil.getAllUsers(onSuccess = { userList ->
             list.clear()
             list.addAll(userList)
@@ -47,5 +43,6 @@ class SearchFragment : Fragment(R.layout.fragment_search) {
         }, onFailure = { e ->
             // Handle error
         })
+
     }
 }

@@ -24,7 +24,7 @@
         android:layout_marginEnd="25dp"
         android:text="@string/post"
         android:textColor="@color/white"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/ivBack"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivBack" />
@@ -33,7 +33,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create New Post"
+        android:text="@string/create_new_post"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -56,7 +56,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
+            android:layout_height="220dp"
             android:layout_margin="20dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="25dp"
@@ -86,42 +86,47 @@
                     android:layout_marginHorizontal="15dp"
                     android:maxLength="15"
                     android:maxLines="1"
-                    android:text="chineze"
+                    android:text="@string/chineze"
                     android:textColor="@color/black"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
-                    app:layout_constraintEnd_toStartOf="@+id/btnPrivate"
+                    app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
                     app:layout_constraintStart_toEndOf="@+id/ivPerson"
                     app:layout_constraintTop_toTopOf="@+id/ivPerson" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnPrivate"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textInputLayout"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox.ExposedDropdownMenu"
                     android:layout_width="wrap_content"
-                    android:layout_height="45dp"
-                    android:background="@drawable/bg_circle"
-                    android:drawableEnd="@drawable/ic_arrow_down"
-                    android:drawableTint="@color/white"
-                    android:gravity="start"
-                    android:paddingStart="10dp"
-                    android:paddingEnd="10dp"
-                    android:text="@string/btn_public"
-                    android:textAllCaps="false"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    app:backgroundTint="@color/green"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_edit"
+                    app:boxStrokeWidth="0dp"
                     app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/ivPerson" />
+                    app:layout_constraintTop_toTopOf="@+id/ivPerson">
+
+                    <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                        android:id="@+id/btnPrivate"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_edit"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:padding="10dp"
+                        android:textSize="14sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <EditText
-                    android:id="@+id/edtSearch"
+                    android:id="@+id/edtPost"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_marginTop="15dp"
                     android:autofillHints="false"
                     android:background="@color/white"
                     android:gravity="top"
-                    android:hint="What's on your mind?"
+                    android:hint="@string/what_s_on_your_mind"
                     android:inputType="text"
                     android:maxLines="5"
                     android:textColor="@color/gray"
@@ -135,17 +140,42 @@
 
         </androidx.cardview.widget.CardView>
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btnPickNew"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            app:cardBackgroundColor="@color/gray"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:contentPadding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+            <TextView
+                style="@style/small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/upload_image"
+                android:paddingHorizontal="30dp"
+                android:textColor="@color/white" />
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Also post on"
+            android:text="@string/also_post_on"
             android:textColor="@color/black"
+            android:layout_marginTop="15dp"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/cardView"
-            app:layout_constraintTop_toBottomOf="@+id/cardView" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPickNew" />
 
         <LinearLayout
             android:id="@+id/linearLayout1"
@@ -163,7 +193,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="3"
-                android:text="Facebook"
+                android:text="@string/facebook"
                 android:textSize="20sp" />
 
             <com.suke.widget.SwitchButton
@@ -171,7 +201,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1.4"
+                android:layout_weight="1"
                 android:checked="true"
                 android:gravity="center"
                 app:sb_checked_color="@color/green"
@@ -198,7 +228,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="3"
-                android:text="Twitter"
+                android:text="@string/twitter"
                 android:textSize="20sp" />
 
             <com.suke.widget.SwitchButton
@@ -206,7 +236,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1.2"
+                android:layout_weight="1"
                 android:checked="true"
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"

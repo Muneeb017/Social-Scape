@@ -12,6 +12,7 @@ import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentProfileBinding
 import com.muneeb.socialscape.databinding.FragmentSearchBinding
 import com.muneeb.socialscape.utils.FirestoreUtil
+import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
@@ -30,22 +31,26 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
-        setData()
     }
 
     private fun setData() {
         FirestoreUtil.getUserData(onSuccess = { user ->
             if (user != null) {
-                // User data retrieved successfully
-                // Access user properties like user.name, user.email, etc.
                 binding.tvName.text = user.name
                 binding.tvUserName.text = user.userName
+                binding.ivPerson.loadImageFromUrl(user.image)
             } else {
-                // Current user document does not exist
                 Toast.makeText(requireContext(), "User dose not exist", Toast.LENGTH_SHORT).show()
             }
         }, onFailure = { e ->
             // Handle error
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        setData()
+
     }
 }

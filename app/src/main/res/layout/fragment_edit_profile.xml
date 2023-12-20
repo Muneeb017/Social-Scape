@@ -17,16 +17,24 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="@drawable/ic_gift_box" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/ivImage"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvImage"
         android:layout_width="80dp"
         android:layout_height="80dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="0dp"
         android:layout_marginTop="5dp"
-        android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
-        app:srcCompat="@drawable/image" />
+        app:layout_constraintTop_toBottomOf="@+id/textView17">
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/image" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/btnSave"
@@ -72,10 +80,10 @@
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/ivImage"
+        app:layout_constraintBottom_toBottomOf="@+id/cvImage"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ivImage"
-        app:layout_constraintTop_toTopOf="@+id/ivImage">
+        app:layout_constraintStart_toEndOf="@+id/cvImage"
+        app:layout_constraintTop_toTopOf="@+id/cvImage">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/btnRemove"
@@ -147,9 +155,9 @@
         android:layout_height="0dp"
         android:paddingHorizontal="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/ivImage"
-        app:layout_constraintStart_toStartOf="@+id/ivImage"
-        app:layout_constraintTop_toBottomOf="@+id/ivImage">
+        app:layout_constraintEnd_toEndOf="@+id/cvImage"
+        app:layout_constraintStart_toStartOf="@+id/cvImage"
+        app:layout_constraintTop_toBottomOf="@+id/cvImage">
 
         <LinearLayout
             android:id="@+id/constraintLayout"
