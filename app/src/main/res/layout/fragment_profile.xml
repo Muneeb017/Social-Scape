@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_circle_bottom"
-    android:paddingBottom="15dp"
+    android:background="@color/white"
+    android:paddingBottom="20dp"
     tools:context=".ui.fragments.profile.ProfileFragment">
 
     <ImageView
@@ -90,7 +90,7 @@
         android:layout_marginTop="3dp"
         android:text="@string/alexandre_paiva"
         android:textColor="@color/black"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
@@ -103,7 +103,7 @@
         android:layout_marginStart="10dp"
         android:text="@string/artist"
         android:textColor="@color/gray"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
@@ -298,38 +298,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:itemCount="1"
+            android:layout_marginTop="5dp"
             tools:listitem="@layout/item_user_post" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/llRecyclerViewFollow"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:text="@string/suggest_for_you"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcvUserFollow"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            tools:itemCount="1"
-            tools:listitem="@layout/item_user_follow" />
 
     </LinearLayout>
 

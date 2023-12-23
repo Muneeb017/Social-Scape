@@ -5,14 +5,15 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.muneeb.socialscape.databinding.ItemSearchAccouBinding
 import com.muneeb.socialscape.extensions.setOnClickWithDebounce
+import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.model.User
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class AccountsAdapter(
-    private val list: ArrayList<User>,
-    val onClick: (User) -> Unit
+    val onClick: (OtherUser) -> Unit
     ) : RecyclerView.Adapter<AccountsAdapter.ViewHolder>() {
 
+    private val list: ArrayList<OtherUser> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
             ItemSearchAccouBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -39,5 +40,9 @@ class AccountsAdapter(
     inner class ViewHolder(val binding: ItemSearchAccouBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    fun refresh() = notifyDataSetChanged()
+    fun refresh(l: ArrayList<OtherUser>) {
+        list.clear()
+        list.addAll(l)
+        notifyDataSetChanged()
+    }
 }

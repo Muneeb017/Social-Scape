@@ -41,29 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/ivBack" />
 
-    <EditText
-        android:id="@+id/edtSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="20dp"
-        android:autofillHints="false"
-        android:background="@drawable/bg_edit"
-        android:drawableStart="@drawable/search_small"
-        android:drawableEnd="@drawable/ic_voice"
-        android:drawablePadding="15dp"
-        android:drawableTint="@color/black"
-        android:hint="@string/searchs"
-        android:inputType="text"
-        android:maxLines="1"
-        android:padding="10dp"
-        android:paddingEnd="15dp"
-        android:textColor="@color/gray"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
@@ -74,7 +51,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtSearch">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TextView
             android:id="@+id/btnEditProfile"

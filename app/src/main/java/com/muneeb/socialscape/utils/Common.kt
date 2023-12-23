@@ -78,7 +78,7 @@ fun ImageView.loadImageFromUrl(
     aImageUrl: String? = "",
     userImage: Boolean = true
 ) {
-    val placeholder = if (userImage) R.drawable.image else R.drawable.image
+    val placeholder = if (userImage) R.drawable.ic_person else R.drawable.ic_person
     if (!aImageUrl.isNullOrEmpty()) {
         Glide.with(this.context)
             .load(Uri.parse(aImageUrl))

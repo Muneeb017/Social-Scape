@@ -26,7 +26,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     private val pref by lazy { AppPreferences(requireContext()) }
     private var gender = ""
 
-    private var storageRef = Firebase.storage
+    private var storageRef = FirebaseStorage.getInstance()
     private lateinit var uri: Uri
 
     private val genderList by lazy {
@@ -40,8 +40,6 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        storageRef = FirebaseStorage.getInstance()
-
         binding.ivBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -54,20 +52,17 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback {
                 if (it != null) {
                     uri = it
+                    storageRef.getReference("images").child(System.currentTimeMillis().toString())
+                        .putFile(uri).addOnSuccessListener { task ->
+                            task.metadata!!.reference!!.downloadUrl.addOnSuccessListener { url ->
+                                updateProfileImage(url.toString())
+                            }
+                        }
                 }
             })
 
         binding.btnPickNew.setOnClickListener {
             galleryImage.launch("image/*")
-        }
-
-        binding.btnSave.setOnClickListener {
-            storageRef.getReference("images").child(System.currentTimeMillis().toString())
-                .putFile(uri).addOnSuccessListener { task ->
-                    task.metadata!!.reference!!.downloadUrl.addOnSuccessListener { url ->
-                        updateProfileImage(url.toString())
-                    }
-                }
         }
 
     }
@@ -95,7 +90,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             name = binding.edtName.text.toString(),
             userName = binding.edtUserName.text.toString(),
             age = binding.edtAge.text.toString(),
-            gender = binding.edtGender.text.toString()
+            gender = binding.edtGender.text.toString(),
+            image = pref.photo
         ), onSuccess = {
             findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
         }, onFailure = { e ->
@@ -110,6 +106,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             binding.ivImage.loadImageFromUrl(user.image)
             if (!user.age.isNullOrEmpty()) binding.edtAge.setText(user.age)
             binding.edtGender.setText(user.gender)
+            binding.edtEmail.setText(user.email)
         }, onFailure = { e ->
             // Handle error
             showToast(e.localizedMessage?.toString() ?: "DB Error")

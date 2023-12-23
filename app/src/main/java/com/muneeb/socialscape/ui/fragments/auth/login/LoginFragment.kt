@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.flashbid.luv.extensions.viewBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.muneeb.socialscape.R
+import com.muneeb.socialscape.data.local.AppPreferences
 import com.muneeb.socialscape.databinding.FragmentCreateNewAccountBinding
 import com.muneeb.socialscape.databinding.FragmentLoginBinding
 import com.muneeb.socialscape.extensions.setOnClickWithDebounce
@@ -18,6 +19,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private val binding by viewBinding(FragmentLoginBinding::bind)
     private lateinit var firebaseAuth: FirebaseAuth
+    private val pref by lazy { AppPreferences(requireContext()) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -39,6 +41,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                         if (it.isSuccessful) {
+                            pref.isLoggedIn = true
                             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                         } else {
                             Toast.makeText(

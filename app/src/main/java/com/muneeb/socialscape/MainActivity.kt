@@ -2,14 +2,11 @@ package com.muneeb.socialscape
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.annotation.IdRes
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationItemView
-import com.google.firebase.FirebaseApp
-import com.google.firebase.auth.FirebaseAuth
+import com.muneeb.socialscape.data.local.AppPreferences
 import com.muneeb.socialscape.databinding.ActivityMainBinding
 import com.muneeb.socialscape.extensions.hide
 import com.muneeb.socialscape.extensions.show
@@ -26,6 +23,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         setContentView(binding.root)
 
         navController = findNavController(R.id.nav_host_fragment_activity_main)
+
         binding.navView.setupWithNavController(navController)
 
         navController.addOnDestinationChangedListener(this)

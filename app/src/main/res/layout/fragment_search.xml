@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_circle_bottom"
-    android:paddingBottom="15dp"
     tools:context=".ui.fragments.search.SearchFragment">
 
     <EditText
@@ -16,177 +15,31 @@
         android:layout_marginTop="25dp"
         android:autofillHints="false"
         android:background="@drawable/bg_edit"
-        android:drawableTint="@color/black"
         android:drawableStart="@drawable/search_small"
         android:drawableEnd="@drawable/ic_voice"
         android:drawablePadding="15dp"
-        android:paddingEnd="15dp"
+        android:drawableTint="@color/black"
         android:hint="@string/search"
         android:inputType="text"
         android:maxLines="1"
         android:padding="10dp"
+        android:paddingEnd="15dp"
         android:textColor="@color/gray"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnDiscover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        app:cardBackgroundColor="@color/green"
-        app:cardCornerRadius="15dp"
-        app:layout_constraintStart_toStartOf="@+id/edtSearch"
-        app:layout_constraintTop_toBottomOf="@+id/edtSearch">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="6dp"
-            android:text="@string/discover"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnAccounts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:cardBackgroundColor="#80D0D0D0"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnDiscover"
-        app:layout_constraintStart_toEndOf="@+id/btnDiscover"
-        app:layout_constraintTop_toTopOf="@+id/btnDiscover">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="6dp"
-            android:text="@string/accounts"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/btnTag"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="8dp"
-        app:cardBackgroundColor="#80D0D0D0"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnAccounts"
-        app:layout_constraintStart_toEndOf="@+id/btnAccounts"
-        app:layout_constraintTop_toTopOf="@+id/btnAccounts">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingHorizontal="15dp"
-            android:paddingVertical="6dp"
-            android:text="@string/tags"
-            android:textColor="@color/gray"
-            android:textSize="16sp" />
-
-    </androidx.cardview.widget.CardView>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        android:paddingVertical="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnDiscover">
-
-        <TextView
-            android:id="@+id/tvRecent"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/recent"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/tvClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear_all"
-            android:textColor="@color/green"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvSearchDiscover"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
-        tools:itemCount="1"
-        tools:listitem="@layout/item_search_dis" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcvUserPAccounts"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/edtSearch"
         tools:itemCount="1"
         tools:listitem="@layout/item_search_accou" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvTag"
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_tags" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvTagPost"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout5"
-        tools:itemCount="5"
-        tools:listitem="@layout/item_tags_post" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

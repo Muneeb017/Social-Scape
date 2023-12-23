@@ -6,5 +6,6 @@ data class Post(
     val text: String? = null,
     val privacy: String? = null,
     val image: String? = null,
+    val imageUser: String? = null,
     // Add other post properties as needed
 )

@@ -7,16 +7,22 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
+import com.muneeb.socialscape.adapters.AccountsAdapter
+import com.muneeb.socialscape.adapters.MyPostAdapter
 import com.muneeb.socialscape.databinding.FragmentProfileBinding
 import com.muneeb.socialscape.databinding.FragmentSearchBinding
+import com.muneeb.socialscape.extensions.setGridLayout
+import com.muneeb.socialscape.extensions.setVerticalLayout
 import com.muneeb.socialscape.utils.FirestoreUtil
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private val binding by viewBinding(FragmentProfileBinding::bind)
+    private val myPostAdapter = MyPostAdapter()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,6 +37,17 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
 
+        binding.rcvSearchDiscover.apply {
+            setGridLayout(2)
+            adapter = myPostAdapter
+        }
+
+        FirestoreUtil.getUploadedPosts(onSuccess = { postsList ->
+            myPostAdapter.refresh(postsList.toCollection(ArrayList()))
+        }, onFailure = { e ->
+            // Handle error
+        })
+
     }
 
     private fun setData() {
@@ -39,6 +56,8 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 binding.tvName.text = user.name
                 binding.tvUserName.text = user.userName
                 binding.ivPerson.loadImageFromUrl(user.image)
+                binding.tvCountFollowing.setText((user.followings?.size?:0).toString())
+                binding.tvCountFollowers.setText((user.followers?.size?:0).toString())
             } else {
                 Toast.makeText(requireContext(), "User dose not exist", Toast.LENGTH_SHORT).show()
             }
@@ -51,6 +70,6 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         super.onResume()
 
         setData()
-
     }
+
 }

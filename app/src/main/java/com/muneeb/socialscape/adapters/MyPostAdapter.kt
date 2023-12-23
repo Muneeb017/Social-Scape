@@ -4,16 +4,18 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.muneeb.socialscape.databinding.ItemPostBinding
+import com.muneeb.socialscape.databinding.ItemUserPostBinding
+import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.model.Post
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
-class NewPostAdapter(
-    private val list: ArrayList<Post>
-    ) : RecyclerView.Adapter<NewPostAdapter.ViewHolder>() {
+class MyPostAdapter() : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
+
+    private val list: ArrayList<Post> = ArrayList()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
-            ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemUserPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -21,16 +23,18 @@ class NewPostAdapter(
         val model = list[position]
 
         with(holder.binding) {
-            tvUserName.text = model.name
-            tvName.text = model.text
             ivPost.loadImageFromUrl(model.image)
         }
     }
 
     override fun getItemCount(): Int = list.size
 
-    inner class ViewHolder(val binding: ItemPostBinding) :
+    inner class ViewHolder(val binding: ItemUserPostBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    fun refresh() = notifyDataSetChanged()
+    fun refresh(l: ArrayList<Post>) {
+        list.clear()
+        list.addAll(l)
+        notifyDataSetChanged()
+    }
 }

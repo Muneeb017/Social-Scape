@@ -49,13 +49,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             adapter = newPostAdapter
         }
 
-        FirestoreUtil.getUploadedPosts(onSuccess = { postsList ->
-            list.clear()
-            list.addAll(postsList)
-            newPostAdapter.refresh()
-        }, onFailure = { e ->
-            // Handle error
-        })
+        FirestoreUtil.getPostsFromFollowedUsers(
+            onSuccess = { postsList ->
+                // Handle the list of posts
+                list.clear()
+                list.addAll(postsList)
+                newPostAdapter.refresh()
+            },
+            onFailure = { e ->
+                // Handle error
+            }
+        )
+
+
 
 
     }
