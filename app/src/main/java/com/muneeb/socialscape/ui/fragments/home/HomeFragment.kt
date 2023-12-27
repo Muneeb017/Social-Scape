@@ -22,7 +22,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.ivNewPost.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_newPostFragment)
+            findNavController().navigate(R.id.action_homeFragment_to_videoRecordingFragment)
         }
         binding.ivNotification.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_likesFragment)

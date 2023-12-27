@@ -9,7 +9,8 @@ import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.model.Post
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
-class MyPostAdapter() : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
+class MyPostAdapter(private val onClick:(Post) -> Unit) :
+    RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
     private val list: ArrayList<Post> = ArrayList()
 
@@ -24,13 +25,14 @@ class MyPostAdapter() : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
         with(holder.binding) {
             ivPost.loadImageFromUrl(model.image)
+
+
         }
     }
 
     override fun getItemCount(): Int = list.size
 
-    inner class ViewHolder(val binding: ItemUserPostBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(val binding: ItemUserPostBinding) : RecyclerView.ViewHolder(binding.root)
 
     fun refresh(l: ArrayList<Post>) {
         list.clear()

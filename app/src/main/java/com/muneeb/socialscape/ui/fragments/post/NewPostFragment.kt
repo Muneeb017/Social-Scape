@@ -5,15 +5,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.Toast
-import androidx.activity.result.ActivityResultCallback
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.flashbid.luv.extensions.viewBinding
-import com.google.firebase.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import com.google.firebase.storage.storage
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.databinding.FragmentNewPostBinding
+import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.utils.FirestoreUtil
 import com.muneeb.socialscape.utils.loadImageFromUrl
 import com.muneeb.socialscape.utils.setArrayAdapter
@@ -21,6 +19,7 @@ import com.muneeb.socialscape.utils.setArrayAdapter
 class NewPostFragment : Fragment(R.layout.fragment_new_post) {
 
     private val binding by viewBinding(FragmentNewPostBinding::bind)
+    private val args by navArgs<NewPostFragmentArgs>()
     private var gender = ""
     private lateinit var postUrl: String
     private var storageRef = FirebaseStorage.getInstance()
@@ -36,31 +35,28 @@ class NewPostFragment : Fragment(R.layout.fragment_new_post) {
         super.onViewCreated(view, savedInstanceState)
 
         setGenderList()
+
         binding.ivBack.setOnClickListener {
             findNavController().popBackStack()
         }
 
         binding.btnPost.setOnClickListener {
-            createUserPost()
+            uploadPicture(args.uri)
+            findNavController().navigate(R.id.action_newPostFragment_to_homeFragment)
         }
 
-        val galleryImage =
-            registerForActivityResult(ActivityResultContracts.GetContent(), ActivityResultCallback {
-                if (it != null) {
-                    storageRef.getReference("images").child(System.currentTimeMillis().toString())
-                        .putFile(it).addOnSuccessListener { task ->
-                            task.metadata!!.reference!!.downloadUrl.addOnSuccessListener { url ->
-                                postUrl = url.toString()
-                                binding.ivPost.loadImageFromUrl(postUrl)
-                            }
-                        }
+        binding.ivPost.setImageURI(Uri.parse(args.uri))
+
+    }
+
+    private fun uploadPicture(uri: String) {
+        storageRef.getReference("images").child(System.currentTimeMillis().toString())
+            .putFile(Uri.parse(uri)).addOnSuccessListener { task ->
+                task.metadata!!.reference!!.downloadUrl.addOnSuccessListener { url ->
+                    postUrl = url.toString()
+                    createUserPost()
                 }
-            })
-
-        binding.btnUploadImage.setOnClickListener {
-            galleryImage.launch("image/*")
-        }
-
+            }
     }
 
     private fun setData() {
@@ -77,12 +73,12 @@ class NewPostFragment : Fragment(R.layout.fragment_new_post) {
     }
 
     private fun createUserPost() {
-        FirestoreUtil.createPost(
-            text = binding.edtPost.text.toString(),
+        FirestoreUtil.createPost(text = binding.edtPost.text.toString(),
             privacy = binding.btnPrivate.text.toString(),
             name = binding.tvName.text.toString(),
             image = postUrl,
             onSuccess = {
+                Toast.makeText(requireContext(),"Uploaded Picture",Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_newPostFragment_to_homeFragment)
             }) { e ->
             // Handle error

@@ -14,8 +14,11 @@
             android:id="@+id/action_homeFragment_to_likesFragment"
             app:destination="@id/likesFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_newPostFragment"
-            app:destination="@id/newPostFragment" />
+            android:id="@+id/action_homeFragment_to_videoRecordingFragment"
+            app:destination="@id/videoRecordingFragment" />
+        <!--        <action-->
+        <!--            android:id="@+id/action_homeFragment_to_newPostFragment"-->
+        <!--            app:destination="@id/newPostFragment" />-->
     </fragment>
 
     <fragment
@@ -145,6 +148,9 @@
         <action
             android:id="@+id/action_newPostFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <argument
+            android:name="uri"
+            app:argType="string" />
     </fragment>
 
     <fragment
@@ -206,7 +212,11 @@
         android:id="@+id/videoRecordingFragment"
         android:name="com.muneeb.socialscape.ui.fragments.story.VideoRecordingFragment"
         android:label="fragment_video_recording"
-        tools:layout="@layout/fragment_video_recording" />
+        tools:layout="@layout/fragment_video_recording">
+        <action
+            android:id="@+id/action_videoRecordingFragment_to_newPostFragment"
+            app:destination="@id/newPostFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/otherUserProfileFragment"

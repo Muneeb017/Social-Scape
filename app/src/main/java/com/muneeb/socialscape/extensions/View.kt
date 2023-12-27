@@ -180,25 +180,25 @@ fun EditText.disableSpaces() {
     this.filters = arrayOf(filter)
 }
 
-fun Context.getImageUri(bitmap: Bitmap): Uri? {
-    val values = ContentValues()
-    values.put(MediaStore.Images.Media.TITLE, "Qr Code")
-    values.put(MediaStore.Images.Media.DESCRIPTION, "LUV QR code sharing")
-    values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
-    val uri: Uri? = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
-    val outputStream: OutputStream? = uri?.let { contentResolver.openOutputStream(it) }
-    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
-    outputStream?.close()
-    return uri
-}
-
-fun View.createBitmapFromView(): Bitmap {
-    val view = this
-    val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
-    val canvas = Canvas(bitmap)
-    view.draw(canvas)
-    return bitmap
-}
+//fun Context.getImageUri(bitmap: Bitmap): Uri? {
+//    val values = ContentValues()
+//    values.put(MediaStore.Images.Media.TITLE, "Qr Code")
+//    values.put(MediaStore.Images.Media.DESCRIPTION, "LUV QR code sharing")
+//    values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpeg")
+//    val uri: Uri? = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+//    val outputStream: OutputStream? = uri?.let { contentResolver.openOutputStream(it) }
+//    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, outputStream)
+//    outputStream?.close()
+//    return uri
+//}
+//
+//fun View.createBitmapFromView(): Bitmap {
+//    val view = this
+//    val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+//    val canvas = Canvas(bitmap)
+//    view.draw(canvas)
+//    return bitmap
+//}
 
 //fun generateRoundedQRCode(context: Context, text: String, size: Int, cornerRadius: Float): Bitmap {
 //    val hints = EnumMap<EncodeHintType, Any>(EncodeHintType::class.java)

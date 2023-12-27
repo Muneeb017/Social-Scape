@@ -11,34 +11,20 @@
         android:id="@+id/cardView3"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toTopOf="@+id/rcvPhotosOptions"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <View
-            android:id="@+id/camera"
-            android:background="@drawable/bg_round_green_grad"
+        <!-- Camera Preview -->
+        <androidx.camera.view.PreviewView
+            android:id="@+id/previewView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:adjustViewBounds="true" />
-
-        <RelativeLayout
-            android:id="@+id/videoView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:visibility="gone">
-
-            <VideoView
-                android:id="@+id/videoView12"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true" />
-
-        </RelativeLayout>
+            app:layout_constraintBottom_toTopOf="@+id/rcvPhotosOptions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.cardview.widget.CardView>
 
