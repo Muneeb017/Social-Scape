@@ -22,7 +22,6 @@ class CreateNewAccountFragment : Fragment(R.layout.fragment_create_new_account) 
 
     private val binding by viewBinding(FragmentCreateNewAccountBinding::bind)
 
-
     private lateinit var firebaseAuth: FirebaseAuth
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

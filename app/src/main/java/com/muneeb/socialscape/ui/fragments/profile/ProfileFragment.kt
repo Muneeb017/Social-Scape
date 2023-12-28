@@ -5,31 +5,34 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
-import com.muneeb.socialscape.adapters.AccountsAdapter
 import com.muneeb.socialscape.adapters.MyPostAdapter
+import com.muneeb.socialscape.adapters.StoryAdapter
 import com.muneeb.socialscape.databinding.DailogDeleteBinding
 import com.muneeb.socialscape.databinding.FragmentProfileBinding
-import com.muneeb.socialscape.databinding.FragmentSearchBinding
 import com.muneeb.socialscape.extensions.setGridLayout
+import com.muneeb.socialscape.extensions.setHorizontalLayout
 import com.muneeb.socialscape.extensions.setOnClickWithDebounce
-import com.muneeb.socialscape.extensions.setVerticalLayout
 import com.muneeb.socialscape.model.Post
+import com.muneeb.socialscape.model.StoryModel
 import com.muneeb.socialscape.utils.FirestoreUtil
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class ProfileFragment : Fragment(R.layout.fragment_profile) {
 
     private val binding by viewBinding(FragmentProfileBinding::bind)
-    private val myPostAdapter = MyPostAdapter(this::onItemClick)
+    private val myPostAdapter by lazy { MyPostAdapter(list, this::onItemClick) }
+    private val list: ArrayList<Post> = ArrayList()
+    private val storyAdapter by lazy { StoryAdapter(lists) }
+    private val lists: ArrayList<StoryModel> = ArrayList()
 
+    private fun onItemClick(item: Post) {
+//        showDialogDeletePost(item)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -43,6 +46,24 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         binding.btnEdit.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_editProfileFragment)
         }
+
+        binding.rcvStorie.apply {
+            setHorizontalLayout()
+            adapter = storyAdapter
+        }
+        val storyList = mutableListOf(
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194"),
+            StoryModel("", "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194")
+        )
+        binding.rcvStorie.adapter = StoryAdapter(storyList)
 
         binding.rcvSearchDiscover.apply {
             setGridLayout(2)
@@ -62,6 +83,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
             if (user != null) {
                 binding.tvName.text = user.name
                 binding.tvUserName.text = user.userName
+                binding.tvBio.text = user.bio
                 binding.ivPerson.loadImageFromUrl(user.image)
                 binding.tvCountFollowing.setText((user.followings?.size ?: 0).toString())
                 binding.tvCountFollowers.setText((user.followers?.size ?: 0).toString())
@@ -79,5 +101,18 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
         setData()
     }
 
+//    private fun showDialogDeletePost(item: Post) {
+//        val builder = AlertDialog.Builder(requireContext())
+//        val dialogBinding = DailogDeleteBinding.inflate(layoutInflater)
+//        val dialog = builder.create().apply {
+//            window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//            setCancelable(false)
+//            setView(dialogBinding.root)
+//        }
+//
+//        dialogBinding.btnCancel.setOnClickWithDebounce { dialog.dismiss() }
+//
+//        dialog.show()
+//    }
 
 }

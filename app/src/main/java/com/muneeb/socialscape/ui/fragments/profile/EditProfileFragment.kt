@@ -40,6 +40,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.tvName.setText("Edit Profile")
+
         binding.ivBack.setOnClickListener {
             findNavController().popBackStack()
         }
@@ -91,7 +93,8 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             userName = binding.edtUserName.text.toString(),
             age = binding.edtAge.text.toString(),
             gender = binding.edtGender.text.toString(),
-            image = pref.photo
+            image = pref.photo,
+            bio = binding.edtBio.text.toString()
         ), onSuccess = {
             findNavController().navigate(R.id.action_editProfileFragment_to_profileFragment)
         }, onFailure = { e ->
@@ -107,6 +110,7 @@ class EditProfileFragment : Fragment(R.layout.fragment_edit_profile) {
             if (!user.age.isNullOrEmpty()) binding.edtAge.setText(user.age)
             binding.edtGender.setText(user.gender)
             binding.edtEmail.setText(user.email)
+            binding.edtBio.setText(user.bio)
         }, onFailure = { e ->
             // Handle error
             showToast(e.localizedMessage?.toString() ?: "DB Error")

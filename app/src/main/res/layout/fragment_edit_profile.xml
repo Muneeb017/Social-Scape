@@ -40,7 +40,7 @@
         android:id="@+id/btnSave"
         style="@style/small"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/bg_round_green_grad"
         android:gravity="center"
@@ -214,6 +214,49 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center"
+                android:text="@string/email"
+                android:textColor="@color/gray" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit"
+                android:drawableStart="@drawable/sms"
+                android:drawablePadding="15dp"
+                android:enabled="false"
+                android:textColor="@color/black"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/small"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/bio"
+                android:textColor="@color/gray" />
+
+            <EditText
+                android:id="@+id/edtBio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edit"
+                android:drawableStart="@drawable/ic_info_ex"
+                android:drawablePadding="15dp"
+                android:textColor="@color/black"
+                android:imeOptions="actionNext"
+                android:maxLines="1"
+                android:padding="15dp"
+                android:textSize="12sp" />
+
+            <TextView
+                style="@style/text"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:gravity="center"
                 android:text="@string/age"
                 android:textColor="@color/gray" />
 
@@ -266,27 +309,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                style="@style/text"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center"
-                android:text="@string/email"
-                android:textColor="@color/gray" />
 
-            <EditText
-                android:id="@+id/edtEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_edit"
-                android:drawableStart="@drawable/sms"
-                android:drawablePadding="15dp"
-                android:enabled="false"
-                android:textColor="@color/black"
-                android:imeOptions="actionNext"
-                android:maxLines="1"
-                android:padding="15dp"
-                android:textSize="12sp" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnDeleteAccount"

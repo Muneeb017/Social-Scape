@@ -17,16 +17,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/ivPerson"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvImage"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/image"
+            app:cardCornerRadius="80dp"
+            app:cardElevation="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivPerson"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image" />
+
+        </androidx.cardview.widget.CardView>
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvUserStoryAdd"
@@ -37,10 +46,10 @@
             app:strokeWidth="0dp"
             android:visibility="gone"
             app:cardElevation="0dp"
-            app:layout_constraintBottom_toBottomOf="@+id/ivPerson"
-            app:layout_constraintEnd_toEndOf="@+id/ivPerson"
-            app:layout_constraintStart_toStartOf="@+id/ivPerson"
-            app:layout_constraintTop_toTopOf="@+id/ivPerson">
+            app:layout_constraintBottom_toBottomOf="@+id/cvImage"
+            app:layout_constraintEnd_toEndOf="@+id/cvImage"
+            app:layout_constraintStart_toStartOf="@+id/cvImage"
+            app:layout_constraintTop_toTopOf="@+id/cvImage">
 
             <ImageView
                 android:layout_width="10dp"
@@ -58,6 +67,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="uzoma_10"
+        android:layout_marginTop="5dp"
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="@+id/constraintLayout3"

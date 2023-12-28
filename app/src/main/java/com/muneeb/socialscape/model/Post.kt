@@ -9,3 +9,9 @@ data class Post(
     val imageUser: String? = null,
     // Add other post properties as needed
 )
+//// When creating a new post
+//val postsCollection = firestore.collection("posts")
+//val newPost = Post(/*... populate post properties ...*/)
+//
+//val newPostRef = postsCollection.add(newPost)
+//val postId = newPostRef.id // Obtain the auto-generated document ID as the postId

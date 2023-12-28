@@ -9,10 +9,9 @@ import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.model.Post
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
-class MyPostAdapter(private val onClick:(Post) -> Unit) :
-    RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
-
-    private val list: ArrayList<Post> = ArrayList()
+class MyPostAdapter(
+    private val list: ArrayList<Post>,val onClick: (Post) -> Unit
+) : RecyclerView.Adapter<MyPostAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
@@ -26,13 +25,20 @@ class MyPostAdapter(private val onClick:(Post) -> Unit) :
         with(holder.binding) {
             ivPost.loadImageFromUrl(model.image)
 
-
+//            // Set a long click listener
+//            root.setOnLongClickListener {
+//                onClick(model)
+//                true
+//            }
         }
     }
 
     override fun getItemCount(): Int = list.size
 
     inner class ViewHolder(val binding: ItemUserPostBinding) : RecyclerView.ViewHolder(binding.root)
+    interface OnPostItemLongClickListener {
+        fun onPostItemLongClick(post: Post)
+    }
 
     fun refresh(l: ArrayList<Post>) {
         list.clear()

@@ -1,16 +1,13 @@
 package com.muneeb.socialscape.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.muneeb.socialscape.databinding.ItemPersonBinding
 import com.muneeb.socialscape.model.StoryModel
-import com.muneeb.socialscape.model.User
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
-class StoryAdapter(private val list: MutableList<StoryModel>) :
-    RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
+class StoryAdapter(val list: MutableList<StoryModel>) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(val binding: ItemPersonBinding) : RecyclerView.ViewHolder(binding.root)
 

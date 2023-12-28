@@ -307,4 +307,25 @@ object FirestoreUtil {
         }
     }
 
+    fun likePost(postId: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        val currentUserId = currentUser?.uid
+
+        if (currentUserId != null) {
+            val postsCollection = firestore.collection("posts")
+
+            // Update the post's likes list to include the current user
+            postsCollection.document(postId)
+                .update("likes", FieldValue.arrayUnion(currentUserId))
+                .addOnSuccessListener {
+                    onSuccess()
+                }
+                .addOnFailureListener { e ->
+                    onFailure(e)
+                }
+        } else {
+            onFailure(Exception("User not authenticated"))
+        }
+    }
+
 }

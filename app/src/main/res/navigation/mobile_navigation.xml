@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/messageFragment"
-        android:name="com.muneeb.socialscape.ui.fragments.message.MessageFragment"
+        android:name="com.muneeb.socialscape.ui.fragments.message.MessageListFragment"
         android:label="fragment_message"
         tools:layout="@layout/fragment_message" />
 
@@ -86,7 +86,7 @@
         android:id="@+id/likesFragment"
         android:name="com.muneeb.socialscape.ui.fragments.likes_friend.LikesFragment"
         android:label="fragment_likes"
-        tools:layout="@layout/fragment_activity_likes" />
+        tools:layout="@layout/fragment_likes" />
 
     <fragment
         android:id="@+id/loginFragment"

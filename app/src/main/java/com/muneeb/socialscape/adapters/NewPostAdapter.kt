@@ -8,12 +8,11 @@ import com.muneeb.socialscape.model.Post
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class NewPostAdapter(
-    private val list: ArrayList<Post>
-    ) : RecyclerView.Adapter<NewPostAdapter.ViewHolder>() {
+    private val list: ArrayList<Post>, val onClick: (Post) -> Unit
+) : RecyclerView.Adapter<NewPostAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding = ItemPostBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
@@ -24,13 +23,18 @@ class NewPostAdapter(
             tvUserName.text = model.name
             tvName.text = model.text
             ivPost.loadImageFromUrl(model.image)
+
+//            llLikes.setOnClickListener {
+//                onClick(model)
+//            }
         }
+
     }
 
     override fun getItemCount(): Int = list.size
 
-    inner class ViewHolder(val binding: ItemPostBinding) :
-        RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(val binding: ItemPostBinding) : RecyclerView.ViewHolder(binding.root)
 
     fun refresh() = notifyDataSetChanged()
+
 }

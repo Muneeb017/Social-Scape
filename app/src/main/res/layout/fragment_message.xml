@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_circle_bottom"
     android:paddingBottom="20dp"
-    tools:context=".ui.fragments.message.MessageFragment">
+    tools:context=".ui.fragments.message.MessageListFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
