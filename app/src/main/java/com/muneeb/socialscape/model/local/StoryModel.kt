@@ -1,4 +1,4 @@
-package com.muneeb.socialscape.model
+package com.muneeb.socialscape.model.local
 
 data class StoryModel(
     val name: String? = null,

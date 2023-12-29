@@ -25,7 +25,11 @@
         android:id="@+id/messageFragment"
         android:name="com.muneeb.socialscape.ui.fragments.message.MessageListFragment"
         android:label="fragment_message"
-        tools:layout="@layout/fragment_message" />
+        tools:layout="@layout/fragment_message_list" >
+        <action
+            android:id="@+id/action_messageFragment_to_chatsFragment"
+            app:destination="@id/chatsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/profileFragment"

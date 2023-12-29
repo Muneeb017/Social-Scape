@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.muneeb.socialscape.databinding.ItemPersonBinding
-import com.muneeb.socialscape.model.StoryModel
+import com.muneeb.socialscape.model.local.StoryModel
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class StoryAdapter(val list: MutableList<StoryModel>) : RecyclerView.Adapter<StoryAdapter.ViewHolder>() {

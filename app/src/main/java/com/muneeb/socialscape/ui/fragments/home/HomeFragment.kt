@@ -13,7 +13,7 @@ import com.muneeb.socialscape.databinding.FragmentHomeBinding
 import com.muneeb.socialscape.extensions.setHorizontalLayout
 import com.muneeb.socialscape.extensions.setVerticalLayout
 import com.muneeb.socialscape.model.Post
-import com.muneeb.socialscape.model.StoryModel
+import com.muneeb.socialscape.model.local.StoryModel
 import com.muneeb.socialscape.utils.FirestoreUtil
 
 class HomeFragment : Fragment(R.layout.fragment_home) {

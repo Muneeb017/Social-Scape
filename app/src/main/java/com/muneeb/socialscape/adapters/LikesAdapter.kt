@@ -4,8 +4,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.muneeb.socialscape.databinding.ItemLikesBinding
-import com.muneeb.socialscape.model.LikesModel
-import com.muneeb.socialscape.model.User
+import com.muneeb.socialscape.model.local.ChatsListModel
+import com.muneeb.socialscape.model.local.LikesModel
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
 class LikesAdapter(private val list: MutableList<LikesModel>) :
@@ -20,9 +20,9 @@ class LikesAdapter(private val list: MutableList<LikesModel>) :
         val model = list[position]
 
         with(holder.binding) {
-            tvUserName.text = model.name
-            tvComment.text = model.text2
-            tvTime.text = model.text
+            tvUserName.text = model.userName
+            tvComment.text = model.comments
+            tvTime.text = model.time
             ivPerson.loadImageFromUrl(model.image)
         }
     }

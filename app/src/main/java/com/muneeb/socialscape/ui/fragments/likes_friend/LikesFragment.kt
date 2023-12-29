@@ -9,7 +9,7 @@ import com.muneeb.socialscape.R
 import com.muneeb.socialscape.adapters.LikesAdapter
 import com.muneeb.socialscape.databinding.FragmentLikesBinding
 import com.muneeb.socialscape.extensions.setVerticalLayout
-import com.muneeb.socialscape.model.LikesModel
+import com.muneeb.socialscape.model.local.LikesModel
 
 class LikesFragment : Fragment(R.layout.fragment_likes) {
 

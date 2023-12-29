@@ -1,8 +1,5 @@
 package com.muneeb.socialscape.ui.fragments.profile
 
-import android.app.AlertDialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -12,13 +9,11 @@ import com.flashbid.luv.extensions.viewBinding
 import com.muneeb.socialscape.R
 import com.muneeb.socialscape.adapters.MyPostAdapter
 import com.muneeb.socialscape.adapters.StoryAdapter
-import com.muneeb.socialscape.databinding.DailogDeleteBinding
 import com.muneeb.socialscape.databinding.FragmentProfileBinding
 import com.muneeb.socialscape.extensions.setGridLayout
 import com.muneeb.socialscape.extensions.setHorizontalLayout
-import com.muneeb.socialscape.extensions.setOnClickWithDebounce
 import com.muneeb.socialscape.model.Post
-import com.muneeb.socialscape.model.StoryModel
+import com.muneeb.socialscape.model.local.StoryModel
 import com.muneeb.socialscape.utils.FirestoreUtil
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
