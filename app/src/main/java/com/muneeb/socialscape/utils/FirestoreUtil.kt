@@ -90,10 +90,10 @@ object FirestoreUtil {
             val userDocumentRef = usersCollection.document(userId)
 
             userDocumentRef.update("image", imageUrl).addOnSuccessListener {
-                    onSuccess()
-                }.addOnFailureListener { e ->
-                    onFailure(e)
-                }
+                onSuccess()
+            }.addOnFailureListener { e ->
+                onFailure(e)
+            }
         } else {
             onFailure(Exception("User not authenticated"))
         }
@@ -161,19 +161,16 @@ object FirestoreUtil {
 
             // Update the current user's followers list to include the user to follow
             usersCollection.document(currentUserId)
-                .update("followings", FieldValue.arrayUnion(userIdToFollow))
-                .addOnSuccessListener {
+                .update("followings", FieldValue.arrayUnion(userIdToFollow)).addOnSuccessListener {
                     // Update the followed user's data to mark the current user as a follower
                     usersCollection.document(userIdToFollow)
                         .update("followers", FieldValue.arrayUnion(currentUserId))
                         .addOnSuccessListener {
                             onSuccess()
-                        }
-                        .addOnFailureListener { e ->
+                        }.addOnFailureListener { e ->
                             onFailure(e)
                         }
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     onFailure(e)
                 }
         } else {
@@ -189,14 +186,12 @@ object FirestoreUtil {
             val usersCollection = firestore.collection("users")
             val postsCollection = firestore.collection("posts")
 
-            usersCollection.document(currentUserId).get()
-                .addOnSuccessListener { documentSnapshot ->
+            usersCollection.document(currentUserId).get().addOnSuccessListener { documentSnapshot ->
                     val currentUserData = documentSnapshot.toObject(User::class.java)
                     val followers = currentUserData?.followings ?: emptyList()
 
                     if (followers.isNotEmpty()) {
-                        postsCollection.whereIn("userId", followers)
-                            .get()
+                        postsCollection.whereIn("userId", followers).get()
                             .addOnSuccessListener { querySnapshot ->
                                 val postsList = mutableListOf<Post>()
 
@@ -206,15 +201,13 @@ object FirestoreUtil {
                                 }
 
                                 onSuccess(postsList)
-                            }
-                            .addOnFailureListener { e ->
+                            }.addOnFailureListener { e ->
                                 onFailure(e)
                             }
                     } else {
                         onSuccess(emptyList())
                     }
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     onFailure(e)
                 }
         } else {
@@ -222,7 +215,9 @@ object FirestoreUtil {
         }
     }
 
-    fun unfollowUser(userIdToUnfollow: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit) {
+    fun unfollowUser(
+        userIdToUnfollow: String, onSuccess: () -> Unit, onFailure: (Exception) -> Unit
+    ) {
         val currentUser = FirebaseAuth.getInstance().currentUser
         val currentUserId = currentUser?.uid
 
@@ -238,12 +233,10 @@ object FirestoreUtil {
                         .update("followers", FieldValue.arrayRemove(currentUserId))
                         .addOnSuccessListener {
                             onSuccess()
-                        }
-                        .addOnFailureListener { e ->
+                        }.addOnFailureListener { e ->
                             onFailure(e)
                         }
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     onFailure(e)
                 }
         } else {
@@ -251,15 +244,17 @@ object FirestoreUtil {
         }
     }
 
-    fun searchUsers(query: String, onSuccess: (List<OtherUser>) -> Unit, onFailure: (Exception) -> Unit) {
+    fun searchUsers(
+        query: String, onSuccess: (List<OtherUser>) -> Unit, onFailure: (Exception) -> Unit
+    ) {
         val usersCollection = firestore.collection("users")
         val currentUser = FirebaseAuth.getInstance().currentUser
 
         if (currentUser != null) {
-            usersCollection.whereGreaterThanOrEqualTo("name", query)
-                .whereLessThanOrEqualTo("name", query + "\uf8ff") // \uf8ff is a high surrogate code point
-                .get()
-                .addOnSuccessListener { nameQuerySnapshot ->
+            usersCollection.whereGreaterThanOrEqualTo("name", query).whereLessThanOrEqualTo(
+                    "name", query + "\uf8ff"
+                ) // \uf8ff is a high surrogate code point
+                .get().addOnSuccessListener { nameQuerySnapshot ->
                     val matchingUsersList = mutableListOf<OtherUser>()
 
                     for (document in nameQuerySnapshot.documents) {
@@ -274,8 +269,7 @@ object FirestoreUtil {
 
                     // Perform a similar query for username
                     usersCollection.whereGreaterThanOrEqualTo("userName", query)
-                        .whereLessThanOrEqualTo("userName", query + "\uf8ff")
-                        .get()
+                        .whereLessThanOrEqualTo("userName", query + "\uf8ff").get()
                         .addOnSuccessListener { usernameQuerySnapshot ->
                             for (document in usernameQuerySnapshot.documents) {
                                 val user = document.toObject(OtherUser::class.java)
@@ -290,16 +284,15 @@ object FirestoreUtil {
                             // Check follow status for each user
                             matchingUsersList.forEach { user ->
                                 user.isFollowed = user.followers?.contains(currentUser.uid) ?: false
-                                user.isFollowing = user.followings?.contains(currentUser.uid) ?: false
+                                user.isFollowing =
+                                    user.followings?.contains(currentUser.uid) ?: false
                             }
 
                             onSuccess(matchingUsersList)
-                        }
-                        .addOnFailureListener { e ->
+                        }.addOnFailureListener { e ->
                             onFailure(e)
                         }
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     onFailure(e)
                 }
         } else {
@@ -315,12 +308,10 @@ object FirestoreUtil {
             val postsCollection = firestore.collection("posts")
 
             // Update the post's likes list to include the current user
-            postsCollection.document(postId)
-                .update("likes", FieldValue.arrayUnion(currentUserId))
+            postsCollection.document(postId).update("likes", FieldValue.arrayUnion(currentUserId))
                 .addOnSuccessListener {
                     onSuccess()
-                }
-                .addOnFailureListener { e ->
+                }.addOnFailureListener { e ->
                     onFailure(e)
                 }
         } else {

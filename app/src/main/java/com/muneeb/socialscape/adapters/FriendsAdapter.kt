@@ -9,11 +9,14 @@ import com.muneeb.socialscape.databinding.ItemSearchAccouBinding
 import com.muneeb.socialscape.extensions.setOnClickWithDebounce
 import com.muneeb.socialscape.model.OtherUser
 import com.muneeb.socialscape.model.User
+import com.muneeb.socialscape.model.local.FriendsListModel
+import com.muneeb.socialscape.model.local.LikesModel
 import com.muneeb.socialscape.utils.loadImageFromUrl
 
-class FriendsAdapter() : RecyclerView.Adapter<FriendsAdapter.ViewHolder>() {
+class FriendsAdapter(
+    private val list: MutableList<FriendsListModel>
+) : RecyclerView.Adapter<FriendsAdapter.ViewHolder>() {
 
-    private val list: ArrayList<OtherUser> = ArrayList()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding =
             ItemFriendsListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -24,7 +27,9 @@ class FriendsAdapter() : RecyclerView.Adapter<FriendsAdapter.ViewHolder>() {
         val model = list[position]
 
         with(holder.binding) {
-
+            tvUserName.text = model.userName
+            tvName.text = model.lastName
+            ivPerson.loadImageFromUrl(model.image)
         }
     }
 
@@ -33,9 +38,4 @@ class FriendsAdapter() : RecyclerView.Adapter<FriendsAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: ItemFriendsListBinding) :
         RecyclerView.ViewHolder(binding.root)
 
-    fun refresh(l: ArrayList<OtherUser>) {
-        list.clear()
-        list.addAll(l)
-        notifyDataSetChanged()
-    }
 }

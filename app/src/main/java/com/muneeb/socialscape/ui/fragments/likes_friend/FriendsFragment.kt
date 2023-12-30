@@ -12,11 +12,14 @@ import com.muneeb.socialscape.adapters.FriendsAdapter
 import com.muneeb.socialscape.adapters.LikesAdapter
 import com.muneeb.socialscape.databinding.FragmentFriendsBinding
 import com.muneeb.socialscape.extensions.setVerticalLayout
+import com.muneeb.socialscape.model.local.FriendsListModel
+import com.muneeb.socialscape.model.local.LikesModel
 
 class FriendsFragment : Fragment(R.layout.fragment_friends) {
 
     private val binding by viewBinding(FragmentFriendsBinding::bind)
-    private val friendsAdapter by lazy { FriendsAdapter() }
+    private val friendsAdapter by lazy { FriendsAdapter(list) }
+    private val list: ArrayList<FriendsListModel> = ArrayList()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -29,6 +32,58 @@ class FriendsFragment : Fragment(R.layout.fragment_friends) {
             setVerticalLayout()
             adapter = friendsAdapter
         }
+        val friendsList = mutableListOf(
+            FriendsListModel(
+                "muneeb",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "Designer"
+            ), FriendsListModel(
+                "muneeb",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "muneeb",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "muneeb",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "Designer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "Designer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "Designer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "software engineer"
+            ), FriendsListModel(
+                "mubeen",
+                "https://firebasestorage.googleapis.com/v0/b/social-scape-8b74b.appspot.com/o/images%2F1703109868833?alt=media&token=06ebeb0e-c5e7-41da-9cfb-ea451ff69194",
+                "Designer"
+            )
+        )
+        binding.rcvFriends.adapter = FriendsAdapter(friendsList)
 
     }
 

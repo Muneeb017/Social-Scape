@@ -16,7 +16,7 @@ import com.muneeb.socialscape.extensions.setVerticalLayout
 class ChatsFragment : Fragment(R.layout.fragment_chats) {
 
     private val binding by viewBinding(FragmentChatsBinding::bind)
-    private val friendsAdapter by lazy { FriendsAdapter() }
+//    private val friendsAdapter by lazy { FriendsAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -27,10 +27,10 @@ class ChatsFragment : Fragment(R.layout.fragment_chats) {
             findNavController().popBackStack()
         }
 
-        binding.rcvMessageList.apply {
-            setVerticalLayout()
-            adapter = friendsAdapter
-        }
+//        binding.rcvMessageList.apply {
+//            setVerticalLayout()
+//            adapter = friendsAdapter
+//        }
 
 
     }

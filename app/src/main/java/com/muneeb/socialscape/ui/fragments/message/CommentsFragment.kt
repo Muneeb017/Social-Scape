@@ -13,7 +13,7 @@ import com.muneeb.socialscape.extensions.setVerticalLayout
 class CommentsFragment : Fragment(R.layout.fragment_comments) {
 
     private val binding by viewBinding(FragmentCommentsBinding::bind)
-    private val friendsAdapter by lazy { FriendsAdapter() }
+//    private val friendsAdapter by lazy { FriendsAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -24,10 +24,10 @@ class CommentsFragment : Fragment(R.layout.fragment_comments) {
             findNavController().popBackStack()
         }
 
-        binding.rcvComments.apply {
-            setVerticalLayout()
-            adapter = friendsAdapter
-        }
+//        binding.rcvComments.apply {
+//            setVerticalLayout()
+//            adapter = friendsAdapter
+//        }
 
     }
 }
